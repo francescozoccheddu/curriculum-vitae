@@ -1,0 +1,94 @@
+[
+  {
+    "where": "Solarplace S.r.l.",
+    "title": "Full-stack developer",
+    "topics": [
+      "Full-stack Web Dev.",
+      "UI & UX",
+      "AI",
+      "NLP"
+    ]
+  },
+  {
+    "where": "Computer Graphics Forum (SGP 2023)",
+    "title": "Scientific publication",
+    "subtitle": "HexBox: Interactive Box Modeling of Hexahedral Meshes",
+    "link": "https://github.com/cg3hci/HexBox",
+    "topics": [
+      "Computer Graphics",
+      "Comput. geometry"
+    ]
+  },
+  {
+    "where": "Università degli Studi di Cagliari",
+    "title": "Master's degree in Computer Science",
+    "year": 2023,
+    "subtitle": "Hexmesh generation via box-modeling",
+    "mark": {
+      "value": 110,
+      "laudem": true,
+      "max": 110
+    },
+    "topics": [
+      "Computer Graphics",
+      "Comput. geometry",
+      "Gui"
+    ]
+  },
+  {
+    "where": "Università degli Studi di Cagliari",
+    "title": "Research fellowship",
+    "topics": [
+      "Info Viz",
+      "UI & UX",
+      "Full-stack Web Dev."
+    ]
+  },
+  {
+    "where": "Smart Tools and Applications in Graphics 2019",
+    "title": "Conference attendance",
+    "topics": [
+      "Computer Graphics",
+      "Comput. geometry"
+    ]
+  },
+  {
+    "where": "Università degli Studi di Cagliari",
+    "title": "Bachelor's degree in Computer Science",
+    "year": 2019,
+    "subtitle": "Visualization of the coverage status of meteorological data collected by a gamification system",
+    "mark": {
+      "value": 110,
+      "laudem": true,
+      "max": 110
+    },
+    "topics": [
+      "Info Viz",
+      "UI & UX",
+      "Back-end Web Dev.",
+      "Mobile Dev.",
+      "Gamification"
+    ]
+  },
+  {
+    "where": "Università degli Studi di Cagliari",
+    "title": "Internship",
+    "topics": [
+      "Info Viz",
+      "UI & UX",
+      "Back-end Web Dev.",
+      "Mobile Dev.",
+      "Gamification"
+    ]
+  },
+  {
+    "where": "Istituto Tecnico Industriale Statale Othoca",
+    "title": "Diploma in Computer Science",
+    "year": 2016,
+    "mark": {
+      "value": 100,
+      "max": 100
+    },
+    "topics": []
+  }
+]

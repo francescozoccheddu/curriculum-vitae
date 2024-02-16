@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "syler.sass-indented",
+    "dbaeumer.vscode-eslint",
+    "jamesohortle.unicodehover",
+    "jock.svg",
+    "ducfilan.pug-formatter",
+    "gruntfuggly.todo-tree",
+    "redhat.vscode-yaml",
+  ]
+}

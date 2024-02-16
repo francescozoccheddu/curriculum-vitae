@@ -1,0 +1,20 @@
+@use "frontpage-main"
+@use "frontpage-side"
+
+.frontpage
+  display: flex
+  flex-direction: row
+  height: 100%
+  gap: 4mm
+
+  >.frontpage-side
+    position: relative
+    flex: 0 0 frontpage-side.$width
+    padding: 1mm
+
+  >.frontpage-main
+    position: relative
+    display: flex
+    flex-direction: column
+    flex: 1 0 0mm
+    padding: 1mm

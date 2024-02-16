@@ -1,0 +1,85 @@
+@use "colors"
+
+$line-size: 0.1mm
+
+%header
+  text-transform: uppercase
+  font-size: 4.5mm
+  text-align: left
+  margin-block: 2mm
+  font-weight: 800
+  border-bottom-width: $line-size
+  border-bottom-style: solid
+  border-bottom-color: colors.$fg1
+  color: colors.$fg1
+
+%pill
+  background: colors.$pill
+  border-radius: 100mm
+  color: colors.$bg
+  font-weight: 900
+  display: flex
+  align-items: baseline
+  text-transform: uppercase
+  padding: 0.75mm 2mm
+  line-height: 1
+  font-size: 3mm
+
+%pill-small
+  @extend %pill
+  padding: 0.6mm 1.5mm
+  font-size: 2.15mm
+  font-weight: 800
+
+%pill-large
+  @extend %pill
+  padding: 1.25mm 3mm
+  font-size: 3.25mm
+  font-weight: 800
+
+%pills
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  gap: 1.4mm 1.2mm
+
+%inline-icon
+  display: inline-block
+  position: relative
+  margin-left: 0.2em
+  margin-top: 0.2em
+  $size: 0.5em
+  width: $size
+  height: $size
+  vertical-align: top
+
+  svg
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
+    *
+      stroke: colors.$fg1
+      stroke-width: $line-size
+
+%alt-background
+  background: colors.$alt-bg
+
+  %pill
+    background: colors.$alt-pill
+    color: colors.$alt-bg
+
+  %header
+    color: colors.$alt-fg2
+    border-bottom-color: colors.$alt-fg2
+
+  %inline-icon
+    svg
+      *
+        stroke: colors.$alt-fg1
+
+a
+  color: inherit
+  text-decoration: inherit

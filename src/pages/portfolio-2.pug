@@ -1,0 +1,19 @@
+extends components/portfolio.pug
+
+block portfolio
+  div(style={ display: 'flex', 'flex-direction': 'column', 'justify-content': 'space-between', height: '100%', gap: '7mm' })
+    +card-l('downhill', '6mm')
+      img(src=image('downhill', '0.png') style={ width: "88mm", height: "auto" })
+    +card-r('tygo', '6mm')
+      div(style={ display: 'flex', gap: '2mm', height: '45mm' })
+        img(src=image('tygo', '0.png') style={ flex: '0 0 auto' })
+        img(src=image('tygo', '1.png') style={ flex: '0 0 auto' })
+    +card-l('android-knob-view', '6mm')
+      div(style={ display: 'flex', gap: '2mm', height: '30mm' })
+        img(src=image('android-knob-view', '0.png') style={ flex: '0 0 auto' })
+        img(src=image('android-knob-view', '1.png') style={ flex: '0 0 auto' })
+        img(src=image('android-knob-view', '2.png') style={ flex: '0 0 auto' })
+    +card-c('junkyard-arena', '5mm')
+      div(style={ display: 'flex', gap: '2mm', height: '62mm' })
+        img(src=image('junkyard-arena', '0.png') style={ flex: '1 0 0mm' })
+        img(src=image('junkyard-arena', '1.png') style={ flex: '1 0 0mm' })

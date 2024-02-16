@@ -1,0 +1,97 @@
+@use 'commons'
+@use 'colors'
+
+.portfolio
+  display: flex
+  flex-direction: column
+  gap: 2mm
+  flex: 1 0 0mm
+
+  >.portfolio-header
+    @extend %header
+    margin-top: 0mm
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    >.page
+      $size: 5mm
+      background: colors.$fg1
+      color: colors.$bg
+      border-radius: 100mm
+      font-size: 3mm
+      width: $size
+      height: $size
+      display: flex
+      align-items: center
+      justify-content: center
+
+  >.portfolio-main
+    flex: 1 0 0mm
+    padding: 7mm
+
+    .portfolio-card
+      display: flex
+
+      >.image
+        flex: 0 0 auto
+        display: block
+
+        img
+          max-width: 100%
+          max-height: 100%
+          object-fit: contain
+          object-position: center
+
+      >.info
+        flex: 1 1 auto
+        display: flex
+        flex-direction: column
+
+        >.year
+          font-size: 3.25mm
+          color: colors.$fg2
+          font-weight: 300
+
+        >.title
+          font-size: 5mm
+          font-weight: 500
+
+          .link-icon
+            @extend %inline-icon
+
+        >.subtitle
+          color: colors.$fg2
+          font-size: 3.5mm
+          font-weight: 400
+
+        >.topics
+          @extend %pills
+          margin-top: 2mm
+
+          >.topic
+            @extend %pill-large
+
+      &[data-float='center']
+        justify-content: center
+        text-align: center
+        flex-direction: column
+
+        .topics
+          justify-content: center
+
+      &[data-float='left']
+        justify-content: left
+        text-align: left
+        flex-direction: row
+
+        .topics
+          justify-content: left
+
+      &[data-float='right']
+        justify-content: right
+        text-align: right
+        flex-direction: row-reverse
+
+        .topics
+          justify-content: right

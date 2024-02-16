@@ -1,0 +1,136 @@
+{
+  "hexbox": {
+    "year": 2023,
+    "title": "HexBox",
+    "link": "https://github.com/cg3hci/hexbox",
+    "subtitle": "3D volumetric hexahedral mesh modeling tool based on the box-modeling paradigm.",
+    "topics": [
+      "Computer graphics",
+      "Computational geometry",
+      "3D Modeling",
+      "GUI",
+      "C++",
+      "OpenGL"
+    ]
+  },
+  "voodo": {
+    "year": 2021,
+    "title": "VooDo",
+    "subtitle": "UI scripting framework for animation, data binding and prototyping on the §WinUI 3§ platform, based on a custom hybrid imperative-declarative compiled language derived from §C#§. It integrates a dedicated compiler and runtime into the §WinUI§ build process using §.NET Source Generators§ and §Roslyn§.",
+    "topics": [
+      "GUI",
+      "Animation",
+      "Compiler Design",
+      "Roslyn"
+    ]
+  },
+  "tdm": {
+    "year": 2019,
+    "title": "TDM Project",
+    "subtitle": "Full-stack architecture for participatory environmental data collection. It comprises a customized back-end for route optimization and time-series storage, along with a mobile application designed with gamification in mind.",
+    "topics": [
+      "UI & UX",
+      "Info Viz",
+      "Routing",
+      "Maps",
+      "Gamification",
+      "Backend Dev.",
+      "Mobile Dev."
+    ]
+  },
+  "downhill": {
+    "year": 2015,
+    "title": "Downhill",
+    "subtitle": "Mobile and desktop videogame featuring physics simulations, procedural terrain generation, fully polygonal graphics, and online leaderboard.",
+    "topics": [
+      "Videogame Dev.",
+      "Computer Graphics",
+      "Physics Sim.",
+      "Procedural Generation"
+    ]
+  },
+  "tygo": {
+    "year": 2016,
+    "title": "Tygo",
+    "subtitle": "Mobile videogame with fully polygonal graphics and procedural animations, developed from scratch for §OpenGL ES§.",
+    "topics": [
+      "Animation",
+      "Game Engine Dev.",
+      "Computer Graphics"
+    ]
+  },
+  "android-knob-view": {
+    "year": 2019,
+    "title": "Knob View",
+    "subtitle": "Highly customizable and animated §Android§ widget.",
+    "topics": [
+      "Android",
+      "GUI"
+    ]
+  },
+  "junkyard-arena": {
+    "year": 2019,
+    "title": "Junkyard Arena",
+    "subtitle": "Multiplayer desktop §Unity§ videogame with custom networking based on the authoritative server paradigm, featuring client-side prediction and server reconciliation.",
+    "topics": [
+      "Videogame Dev.",
+      "Networking",
+      "Unity"
+    ]
+  },
+  "tdm-indoor": {
+    "year": 2022,
+    "title": "TDM Project (indoor)",
+    "subtitle": "Full-stack architecture for querying and visualizing time series of indoor environmental data.",
+    "topics": [
+      "Full-stack dev.",
+      "Java Web",
+      "Info Viz"
+    ]
+  },
+  "mm-launcher": {
+    "year": 2022,
+    "title": "MM Launcher",
+    "subtitle": "Lightweight launcher for §Android TV§.",
+    "topics": [
+      "Android TV",
+      "GUI"
+    ]
+  },
+  "bdp-image-classifier": {
+    "year": 2021,
+    "title": "BDP Image Classifier",
+    "subtitle": "Parallel Bag-of-Visual-Words image classifier implemented with §Apache Spark§ on §AWS EMR§.",
+    "topics": [
+      "Computer Vision",
+      "Big Data",
+      "AWS"
+    ]
+  },
+  "quizbot": {
+    "year": 2020,
+    "title": "QuizBot",
+    "subtitle": "Telegram bot leveraging Knowledge Graphs for generating quizzes and Natural Language Processing techniques for accepting answers in natural language.",
+    "topics": [
+      "NLP",
+      "Knowledge Graphs"
+    ]
+  },
+  "pidby": {
+    "year": 2023,
+    "title": "Pidby",
+    "subtitle": "PDF creator from web pages with built-in §Pug§, §EJS§, §Sass§ and §TypeScript§ support. Used to create this CV.",
+    "topics": [
+      "Document creation",
+      "Web Dev."
+    ]
+  },
+  "led-racing": {
+    "year": 2017,
+    "title": "LED Racing Game",
+    "subtitle": "Videogame for AVR microcontrollers entirely written in assembly language, including an additional desktop and mobile USB configurator tool based on §Qt Quick§.",
+    "topics": [
+      "Embedded Dev."
+    ]
+  }
+}

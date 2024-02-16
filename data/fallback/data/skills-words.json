@@ -1,0 +1,326 @@
+{
+  "topLeft": {
+    "alt": true,
+    "title": "Fields",
+    "seed": 7242208506371303,
+    "maxSize": 15,
+    "minSize": 4,
+    "words": [
+      {
+        "text": "Graphics",
+        "value": 10
+      },
+      {
+        "text": "Comp. Geometry",
+        "value": 8
+      },
+      {
+        "text": "UI",
+        "value": 9
+      },
+      {
+        "text": "UX",
+        "value": 7
+      },
+      {
+        "text": "H-C Int.",
+        "value": 7
+      },
+      {
+        "text": "Lang. Design",
+        "value": 5
+      },
+      {
+        "text": "Videogame Dev.",
+        "value": 7
+      },
+      {
+        "text": "Front-end Dev.",
+        "value": 6
+      },
+      {
+        "text": "Back-end Dev.",
+        "value": 5
+      },
+      {
+        "text": "Embedded Dev.",
+        "value": 4
+      },
+      {
+        "text": "System Dev.",
+        "value": 5
+      },
+      {
+        "text": "Mobile Dev.",
+        "value": 5
+      },
+      {
+        "text": "AI",
+        "value": 4
+      },
+      {
+        "text": "NLP",
+        "value": 4
+      },
+      {
+        "text": "RAG",
+        "value": 3
+      },
+      {
+        "text": "Cloud",
+        "value": 2
+      }
+    ]
+  },
+  "bottomLeft": {
+    "alt": false,
+    "title": "Languages",
+    "seed": 3509355149838631,
+    "maxSize": 20,
+    "minSize": 5,
+    "words": [
+      {
+        "text": "C",
+        "value": 10
+      },
+      {
+        "text": "C++",
+        "value": 10
+      },
+      {
+        "text": "C#",
+        "value": 9
+      },
+      {
+        "text": "Java",
+        "value": 5
+      },
+      {
+        "text": "Python",
+        "value": 6
+      },
+      {
+        "text": "JavaScript",
+        "value": 5
+      },
+      {
+        "text": "TypeScript",
+        "value": 6
+      },
+      {
+        "text": "Scala",
+        "value": 4
+      },
+      {
+        "text": "PowerShell",
+        "value": 2
+      },
+      {
+        "text": "Bash",
+        "value": 3
+      },
+      {
+        "text": "AVR Assembly",
+        "value": 3
+      },
+      {
+        "text": "MATLAB",
+        "value": 2
+      },
+      {
+        "text": "Caml",
+        "value": 1
+      },
+      {
+        "text": "HTML",
+        "value": 1
+      },
+      {
+        "text": "CSS",
+        "value": 1
+      },
+      {
+        "text": "XAML",
+        "value": 1
+      },
+      {
+        "text": "Kotlin",
+        "value": 3
+      }
+    ]
+  },
+  "topRight": {
+    "alt": false,
+    "title": "Platforms",
+    "seed": 5812930388258671,
+    "maxSize": 13,
+    "minSize": 5,
+    "words": [
+      {
+        "text": ".NET",
+        "value": 6
+      },
+      {
+        "text": "WPF",
+        "value": 7
+      },
+      {
+        "text": "UWP",
+        "value": 7
+      },
+      {
+        "text": "WinUI",
+        "value": 7
+      },
+      {
+        "text": "Web",
+        "value": 8
+      },
+      {
+        "text": "React",
+        "value": 8
+      },
+      {
+        "text": "NextJS",
+        "value": 6
+      },
+      {
+        "text": "Play",
+        "value": 4
+      },
+      {
+        "text": "DirectX",
+        "value": 8
+      },
+      {
+        "text": "OpenGL",
+        "value": 9
+      },
+      {
+        "text": "WebGL",
+        "value": 7
+      },
+      {
+        "text": "Rolsyn",
+        "value": 2
+      },
+      {
+        "text": "ExtendScript",
+        "value": 1
+      },
+      {
+        "text": "Unity",
+        "value": 7
+      },
+      {
+        "text": "Unreal Engine",
+        "value": 5
+      },
+      {
+        "text": "Node",
+        "value": 5
+      },
+      {
+        "text": "AWS",
+        "value": 4
+      },
+      {
+        "text": "GCloud",
+        "value": 4
+      },
+      {
+        "text": "Android",
+        "value": 7
+      }
+    ]
+  },
+  "bottomRight": {
+    "alt": false,
+    "title": "Tools & Libraries",
+    "seed": 4632074182401989,
+    "maxSize": 12,
+    "minSize": 5,
+    "words": [
+      {
+        "text": "ANTLR",
+        "value": 3
+      },
+      {
+        "text": "Pug",
+        "value": 1
+      },
+      {
+        "text": "Sass",
+        "value": 3
+      },
+      {
+        "text": "VSCode",
+        "value": 4
+      },
+      {
+        "text": "Visual Studio",
+        "value": 4
+      },
+      {
+        "text": "LibGDX",
+        "value": 3
+      },
+      {
+        "text": "Three.js",
+        "value": 4
+      },
+      {
+        "text": "CPLEX",
+        "value": 1
+      },
+      {
+        "text": "OpenAI",
+        "value": 4
+      },
+      {
+        "text": "Vertex AI",
+        "value": 3
+      },
+      {
+        "text": "SpaCy",
+        "value": 3
+      },
+      {
+        "text": "NLTK",
+        "value": 3
+      },
+      {
+        "text": "Bullet",
+        "value": 2
+      },
+      {
+        "text": "Box2D",
+        "value": 2
+      },
+      {
+        "text": "ffmpeg",
+        "value": 2
+      },
+      {
+        "text": "ImGUI",
+        "value": 2
+      },
+      {
+        "text": "Boost",
+        "value": 3
+      },
+      {
+        "text": "Electron",
+        "value": 2
+      },
+      {
+        "text": "Docker",
+        "value": 1
+      },
+      {
+        "text": "Terraform",
+        "value": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "curriculum-vitae",
+  "description": "My curriculum vitae",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "npx pidby dev ./config.yml",
+    "start": "npx pidby run ./config.yml ./out.pdf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francescozoccheddu/curriculum-vitae.git"
+  },
+  "author": "Francesco Zoccheddu",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/francescozoccheddu/curriculum-vitae/issues"
+  },
+  "homepage": "https://github.com/francescozoccheddu/curriculum-vitae#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.56.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-unused-imports": "^3.0.0"
+  },
+  "dependencies": {
+    "@francescozoccheddu/2d-bin-packing": "^0.0.3",
+    "@francescozoccheddu/pidby": "^0.0.15",
+    "array-shuffle": "^3.0.0",
+    "pure-rand": "^6.0.4",
+    "svg-round-corners": "^0.4.3"
+  }
+}

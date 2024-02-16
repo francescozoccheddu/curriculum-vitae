@@ -1,0 +1,27 @@
+{
+  "name": "Francesco Zoccheddu",
+  "contacts": {
+    "github": "francescozoccheddu",
+    "location": "Italy"
+  },
+  "drivingLicenses": [
+    "B"
+  ],
+  "motherTongue": "Ita",
+  "languages": [
+    {
+      "name": "Eng",
+      "level": "B2"
+    }
+  ],
+  "interests": [
+    "Computer Graphics",
+    "UI & UX",
+    "Videogame Dev.",
+    "System Dev.",
+    "Embedded Dev.",
+    "Desktop Dev.",
+    "AR & VR",
+    "H-C Int."
+  ]
+}

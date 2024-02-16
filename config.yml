@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/francescozoccheddu/pidby/main/schema/config.json
+layout: "a4"
+optimize: false
+nodeModulesDir: "./node_modules"
+pageFiles:
+  - "src/pages/frontpage.pug"
+  - "src/pages/portfolio-1.pug"
+  - "src/pages/portfolio-2.pug"
+  - "src/pages/portfolio-3.pug"

@@ -1,0 +1,12 @@
+[
+  "Programming (§C§, §C++§, §C#§, §Java§, §Python§, §JavaScript§, §TypeScript§, §Kotlin§, §Scala§, §AVR Assembly§, §Caml§, §MATLAB§)",
+  "GUI development (§WPF§, §UWP§, §WinUI§, §Win32§, §Qt§, §Android SDK§, §Web§, §React-Native§, §SwiftUI§)",
+  "Low-level graphics with §OpenGL§ and §Direct3D§",
+  "Videogame development with §Unity§ and §Unreal Engine§ and low-level engine development from scratch",
+  "Front-end web development (§HTML§, §CSS§, §ES6§, §Node§, §React§, §NextJS§, §Rollup/Webpack§)",
+  "Back-end web development (§Java Web§, §Node§, §Django§, §WSGI§, §DBMSs§, §Play§)",
+  "VCS with §Git§ and §GitHub/Bitbucket§",
+  "OS administration and scripting on §Windows§, §Linux§ and §MacOS§",
+  "Other tools and platforms such as §ANTLR§, §Roslyn§, §CPLEX§, §AWS§, §GCloud§, §OpenAI§, §Spark§, §Mapbox§, §OpenCV§, §Bullet§, §SpaCy§, §ffmpeg§, §Dear ImGui§, §Electron§, §Adobe ExtendScript§, §Docker§, §Terraform§",
+  "Audio, video and 3D content creation and editing (§Adobe Audition§, §After Effects§, §Photoshop§, §Illustrator§, §Cinema 4D§, §Blender§)"
+]

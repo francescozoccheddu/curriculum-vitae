@@ -1,0 +1,19 @@
+extends components/portfolio.pug
+
+block portfolio
+  div(style={ display: 'flex', 'flex-direction': 'column', 'justify-content': 'space-between', height: '100%', gap: '10mm' })
+    div(style={ flex: '1 0 0mm', display: 'flex', 'flex-direction': 'row', 'justify-content': 'space-between', width: '100%', gap: '10mm' })
+      div(style={ flex: '0.96 0 0mm' })
+        +card-c('tdm-indoor', '6mm')
+          img(src=image('tdm-indoor', '0.png') style={ flex: '0 0 auto' })
+      div(style={ flex: '1 0 0mm', display: 'flex', 'flex-direction': 'column', 'justify-content': 'space-between', height: '100%', gap: '2mm' })
+        +card-c('mm-launcher', '4mm')
+          img(src=image('mm-launcher', '0.png') style={ width: '50mm' })
+        +card-c('bdp-image-classifier', '6mm')
+        +card-c('quizbot', '6mm')
+        +card-c('pidby', '6mm')
+    div(style={ flex: '0 0 auto', 'margin-inline': '-10mm 0mm' })
+      +card-l('led-racing', '6mm')
+        div(style={ display: 'flex', gap: '2mm', height: '70mm' })
+          img(src=image('led-racing', '0.png') style={ flex: '0 0 auto' })
+          img(src=image('led-racing', '1.png') style={ flex: '0 0 auto' })

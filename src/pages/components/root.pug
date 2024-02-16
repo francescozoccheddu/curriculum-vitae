@@ -1,0 +1,50 @@
+- function asset(path) { return isFile(`/data/main/${path}`) ? `/data/main/${path}` : `/data/fallback/${path}`; }
+- function richText(text) { 
+-   let out = ""; 
+-   let isEmph = false; 
+-   let isMut = false; 
+-   for (const c of text) { 
+-     if (c === '§') {
+-       isEmph = !isEmph;
+-       out += isEmph ? '<span class="root-rt-emph">' : '</span>';
+-     }
+-     else {
+-       out += c;  
+-     }
+-    } 
+-    return out;
+-  }
+
+doctype html
+html
+
+  head
+    title Curriculum Vitae Francesco Zoccheddu
+    script
+      | const __page__ = #{page};
+      | const __pages__ = [!{pages.map(JSON.stringify).join(',')}];
+    link(rel="stylesheet" type="text/css" href="/src/style/main.sass")
+
+  body
+
+    .root
+      .root-main
+        block main
+      .root-footer 
+        .legal
+          | Hereby I authorize the processing of my personal data and particular data included in my CV according to the Legislative Decree 30 June 2003, 
+          | n. 196 “Rules on the protection of personal data” and the GDPR (UE Regulation 2016/679) 
+    .root-dev
+      .pager
+        a.arrow(class=!pages[page-1] && 'disabled' href=pages[page-1]) !{textFile(asset('icons/prev-page.svg'))}
+        .text 
+          span Page #{page + 1} 
+          span.muted of #{pages.length}
+        a.arrow(class=!pages[page+1] && 'disabled' href=pages[page+1]) !{textFile(asset('icons/next-page.svg'))}
+      .credits
+        a.github(href='https://github.com/francescozoccheddu' target='_blank')
+          span.muted github.com/
+          span francescozoccheddu
+        .copyright © #{new Date().getFullYear()} Francesco Zoccheddu
+
+    script(src="/src/scripts/main.ts" type="text/javascript")

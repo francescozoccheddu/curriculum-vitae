@@ -1,0 +1,144 @@
+@use "abrade-font"
+@use "colors"
+
+$pageW: 210mm
+$pageH: 297mm
+
+*
+  box-sizing: border-box
+
+html, body
+  padding: 0mm
+  -webkit-print-color-adjust: exact
+  margin: 0mm
+
+html > body
+
+  >.root
+    width: $pageW
+    height: $pageH
+    position: relative
+    font-family: 'Abrade'
+    background: colors.$bg
+    display: flex
+    flex-direction: column
+    padding: 2mm
+
+    >.root-main
+      position: relative
+      flex: 1 0 0mm
+      display: flex
+      flex-direction: column
+      padding: 3mm
+
+    >.root-footer
+      flex: 0 0 auto
+      padding: 3mm
+      color: colors.$fg3
+      text-align: center
+      line-height: 1.1
+      font-size: 2.5mm
+      margin-inline: 8mm
+      margin-bottom: 2mm
+      font-weight: 300
+
+    .root-rt-emph
+      font-style: italic
+
+  >.root-dev
+    display: none
+
+@media screen
+  $margin: 5mm
+
+  @keyframes fade-in
+    0%
+      opacity: 0
+    100%
+      opacity: 1
+
+  html
+    $col-dark: #272727
+    $col-light: #2e2e2e
+    background-color: $col-dark
+    background-image: linear-gradient(45deg, $col-light 25%, $col-dark 25%, $col-dark 50%, $col-light 50%, $col-light 75%, $col-dark 75%, $col-dark 100%)
+    background-size: 10px 10px
+    min-height: calc( $pageH + $margin * 2 )
+    min-width: calc( $pageW + $margin * 2 )
+
+    >body
+      animation: fade-in 0.25s ease-out 0s 1 normal both
+
+      >.root
+        margin: $margin
+
+      >.root-dev
+        $color: #d3d3d3
+        color: $color
+        font-family: 'Abrade'
+        display: flex
+        flex-direction: column
+        gap: 2mm
+        margin: $margin
+        width: $pageW
+        padding: 5mm
+        margin-bottom: 5mm
+
+        >.pager
+          display: flex
+          gap: 3mm
+          justify-content: center
+          align-items: center
+          animation: fade-in 0.3s ease-out 0.05s 1 normal both
+
+          >.text
+            font-size: 3.5mm
+            font-weight: 400
+
+          >.arrow
+            $size: 6.5mm
+            padding: 1mm
+            border-radius: 1mm
+            width: $size
+            height: $size
+            border: 1px solid transparent
+            transition: background 0.1s ease-out, scale 0.1s ease-out, border 0.1s ease-out
+
+            svg
+              *
+                stroke: $color
+                stroke-width: 2px
+
+            &:hover
+              background: $color
+
+              svg
+                *
+                  stroke: $col-dark
+
+            &:active
+              scale: 90%
+
+            &:focus
+              border: 1px solid $color
+              outline: none
+              box-shadow: none
+
+            &.disabled
+              visibility: hidden
+
+        >.credits
+          opacity: 0.85
+          text-align: center
+          font-weight: 300
+
+          >.github
+            font-size: 3mm
+            animation: fade-in 0.35s ease-out 0.1s 1 normal both
+
+            .muted
+              opacity: 0.8
+
+          >.copyright
+            font-size: 2.5mm
+            animation: fade-in 0.4s ease-out 0.15s 1 normal both

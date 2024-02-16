@@ -1,0 +1,49 @@
+extends root.pug
+
+mixin portfolio-card(key, float, gap)
+  - const info = portfolio[key];
+  .portfolio-card(data-float=float style={ gap })
+    if block
+      .image
+        block
+    .info
+      if info.year
+        .year #{info.year}
+      if info.title
+        .title 
+          if info.link
+            a(href=info.link)
+              span.value #{info.title}
+              span.link-icon !{textFile(asset('icons/link.svg'))}
+          else
+            span.value #{info.title}
+      if info.subtitle
+        .subtitle !{richText(info.subtitle)}
+      if info.topics && info.topics.length > 0
+        .topics
+          each topic in info.topics
+            .topic #{topic}
+
+mixin card-c(key, gap='5mm')
+  +portfolio-card(key, 'center', gap)
+    block
+
+mixin card-l(key, gap='5mm')
+  +portfolio-card(key, 'left', gap)
+    block
+
+mixin card-r(key, gap='5mm')
+  +portfolio-card(key, 'right', gap)
+    block
+
+block main
+  - const portfolio = jsonFile(asset('data/portfolio.json'));
+  - function image(key, name) { return asset(`images/portfolio/${key}/${name}`); }
+  .portfolio
+
+    .portfolio-header 
+      .title Portfolio
+      .page #{page}
+
+    .portfolio-main
+      block portfolio

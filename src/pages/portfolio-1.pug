@@ -1,0 +1,17 @@
+extends components/portfolio.pug
+
+block portfolio
+  div(style={ display: 'flex', 'flex-direction': 'column', 'justify-content': 'space-between', height: '100%' })
+    +card-c('hexbox', '3mm')
+      div(style={ display: 'grid', 'grid-template-columns': '2fr 1fr 1fr', 'grid-template-rows': '1fr 1fr', 'margin-inline': '-8mm -5mm' })
+        img(src=image('hexbox', '0.jpg') style={ 'grid-column': 1, 'grid-row': '1 / 3' })
+        img(src=image('hexbox', '1.jpg') style={ 'grid-column': 2, 'grid-row': 1 })
+        img(src=image('hexbox', '2.jpg') style={ 'grid-column': 3, 'grid-row': 1 })
+        img(src=image('hexbox', '3.jpg') style={ 'grid-column': 2, 'grid-row': 2 })
+        img(src=image('hexbox', '4.jpg') style={ 'grid-column': 3, 'grid-row': 2 })
+    +card-l('voodo', '7mm')
+      img(src=image('voodo', '0.png') style={ width: "36mm", height: "auto" })
+    +card-r('tdm', '6mm')
+      div(style={ display: 'flex', gap: '2mm', height: '72mm' })
+        img(src=image('tdm', '0.png'))
+        img(src=image('tdm', '1.png'))

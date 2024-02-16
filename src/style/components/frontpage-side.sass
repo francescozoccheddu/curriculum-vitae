@@ -1,0 +1,195 @@
+@use "colors"
+@use "sass:color"
+@use "commons"
+
+$enable-back-sidebar-left: false
+$enable-back-sidebar-right: false
+$enable-round-sidebar-left: false
+$enable-round-sidebar-right: false
+$extend-sidebar: true
+
+$width: 74mm
+$half-width: calc($width/2)
+$border-radius: 3mm
+
+.back-sidebar
+  @if $enable-back-sidebar-left or $enable-back-sidebar-right
+    $gradient-shadow-color: color.adjust(colors.$alt-bg, $lightness: -20%)
+    position: absolute
+    top: 0
+    height: $half-width
+    @if $enable-back-sidebar-left
+      left: 0
+      border-top-left-radius: $border-radius
+      background: radial-gradient(circle at 100% 100%, $gradient-shadow-color, colors.$alt-bg)
+    @else
+      left: $half-width
+    @if $enable-back-sidebar-right
+      right: 0
+      border-top-right-radius: $border-radius
+      @if $enable-back-sidebar-left
+        background: radial-gradient(circle at 50% 100%, $gradient-shadow-color, colors.$alt-bg)
+      @else
+        background: radial-gradient(circle at 0% 100%, $gradient-shadow-color, colors.$alt-bg)
+    @else
+      right: $half-width
+  @else
+    display: none
+
+.sidebar
+  @extend %alt-background
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  color: colors.$alt-fg2
+  font-weight: 200
+  text-align: center
+  padding: 4mm 6mm
+  line-height: 1.2
+  display: flex
+  flex-direction: column
+  border-radius: $border-radius
+  @if $extend-sidebar
+    bottom: 0
+  @if $enable-round-sidebar-left
+    border-top-left-radius: $half-width
+  @if $enable-round-sidebar-right
+    border-top-right-radius: $half-width
+
+  .muted
+    color: colors.$alt-fg3
+
+  >.photo
+    $size: calc($width - 12mm)
+    height: $size
+    width: $size
+    object-fit: cover
+    object-position: top
+    border-radius: 100%
+    margin-top: 2mm
+    margin-bottom: 2mm
+    @if $enable-round-sidebar-left or $enable-round-sidebar-right
+      padding: 1mm
+    @else
+      padding: 2mm
+      margin-bottom: 1mm
+
+  >.fullname
+    font-weight: 800
+    font-size: 8mm
+    margin-block: 1mm
+
+  >.country
+    width: 5mm
+    margin-block: 2mm
+    align-self: center
+
+  >.birthdate
+    font-weight: 400
+    margin-block: 2mm
+
+  >.section
+    margin-block: 3mm
+
+    >.header
+      @extend %header
+      margin-bottom: 4mm
+
+    >.interests
+      @extend %pills
+
+      >.interest
+        @extend %pill
+
+    >.contacts
+      display: flex
+      flex-direction: column
+      gap: 1mm
+      text-align: left
+
+      >.contact
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 2mm
+
+        >.icon
+          $size: 7mm
+          width: $size
+          height: $size
+          object-fit: contain
+
+          *
+            stroke: colors.$alt-fg2
+            stroke-width: commons.$line-size
+
+        >.value
+          font-size: 3.4mm
+
+          .link-icon
+            @extend %inline-icon
+
+    >.languages
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-between
+      row-gap: 2mm
+
+      >.language
+        display: flex
+        flex: 0 0 calc(50% - 1mm)
+        height: 10mm
+        flex-direction: row
+        text-transform: uppercase
+        font-weight: 800
+        font-size: 5mm
+        $border-radius: 3mm
+
+        >.name, >.level
+          flex: 1 0 0mm
+          display: flex
+          align-items: center
+          text-align: center
+          justify-content: center
+          padding: 2mm
+          line-height: 1
+
+        >.name
+          background: colors.$bg
+          color: colors.$alt-bg
+          border-radius: $border-radius 0mm 0mm $border-radius
+          padding-left: 2.4mm
+
+        >.level
+          border-radius: 0mm $border-radius $border-radius 0mm
+          border: commons.$line-size solid colors.$bg
+
+          &.mt
+            font-size: 3mm
+
+    >.driving-licenses
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      gap: 2mm
+
+      >.license
+        @extend %pill-large
+        display: flex
+        align-items: center
+        justify-content: center
+        $size: 10mm
+        width: $size
+        height: $size
+        line-height: 1
+        font-size: 5mm
+
+  >.filler
+    flex: 1 0 0mm
+
+  >.update-date
+    font-size: 3mm
+    color: colors.$alt-fg3
+    margin-block: 2mm

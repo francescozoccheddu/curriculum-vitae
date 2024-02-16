@@ -1,0 +1,150 @@
+extends components/root.pug
+
+block main
+  - const info = jsonFile(asset('data/info.json'))
+  - const history = jsonFile(asset('data/history.json'))
+  - const profile = jsonFile(asset('data/profile.json'))
+  - const skills = jsonFile(asset('data/skills.json'))
+  - const skillsWords = jsonFile(asset('data/skills-words.json'))
+  - const skillsList = jsonFile(asset('data/skills-list.json'))
+  .frontpage
+    .frontpage-side
+      .back-sidebar
+      .sidebar
+        img.photo(src=asset('images/profile.png'))
+
+        if info.name
+          .fullname #{info.name}
+
+        img.country(src=asset('icons/country-flag.svg'))
+
+        if info.birthdate
+          .birthdate #{new Date(info.birthdate).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}
+
+        if info.interests && info.interests.length > 0
+          .section
+            .header Interests
+            .interests
+              each v in info.interests
+                .interest #{v}
+
+        if info.contacts
+          .section
+            .header Contacts
+            .contacts
+              if info.contacts.email
+                .contact
+                  .icon !{textFile(asset('icons/email.svg'))}
+                  .value 
+                    a(href=`mailto:${info.contacts.email}`) #{info.contacts.email}
+
+              if info.contacts.phone
+                .contact
+                  .icon !{textFile(asset('icons/phone.svg'))}
+                  .value 
+                    if info.contacts.phone.prefix
+                      span.muted #{info.contacts.phone.prefix} 
+                    span #{info.contacts.phone.number}
+
+              if info.contacts.location
+                .contact
+                  .icon !{textFile(asset('icons/location.svg'))}
+                  .value #{info.contacts.location}
+
+              if info.contacts.github
+                .contact
+                  .icon !{textFile(asset('icons/github.svg'))}
+                  .value 
+                    a(href=`https://github.com/${info.contacts.github}`)
+                      span.muted github.com/
+                      span #{info.contacts.github}
+                      span.link-icon !{textFile(asset('icons/link.svg'))}
+
+              if info.contacts.website
+                .contact
+                  .icon !{textFile(asset('icons/website.svg'))}
+                  .value 
+                    a(href=`https://${info.contacts.website}`)
+                      span #{info.contacts.website}
+                      span.link-icon !{textFile(asset('icons/link.svg'))}
+
+        if info.motherTongue || (info.languages && info.languages.length > 0)
+          .section
+            .header Languages
+            .languages
+              if info.motherTongue
+                .language
+                  .name #{info.motherTongue}
+                  .level.mt Native
+              each language in info.languages
+                .language
+                  .name #{language.name}
+                  .level #{language.level}
+
+        if info.drivingLicenses && info.drivingLicenses.length > 0
+          .section
+            .header Driving License
+            .driving-licenses
+              each license in info.drivingLicenses
+                .license #{license}
+
+        .filler
+        .update-date 
+          span Updated 
+          span.today
+
+    .frontpage-main
+
+      if history && history.length > 0
+        .section
+          .header History
+          .history
+            .line
+            each point in history
+              .point
+                if point.year
+                  .year #{point.year}
+                .bullet
+                if point.where
+                  .where #{point.where}
+                if point.title
+                  .title 
+                    .value #{point.title}
+                    if point.mark
+                      .mark 
+                        .value #{point.mark.value}
+                        if point.mark.laudem
+                          .laudem e lode
+                        .max #{point.mark.max}
+                if point.subtitle
+                  if point.link
+                    a.subtitle(href=point.link)
+                      span.value #{point.subtitle}
+                      span.link-icon !{textFile(asset('icons/link.svg'))}
+                  else
+                    .subtitle
+                      span.value #{point.subtitle}
+                if point.topics && point.topics.length > 0
+                  .topics
+                    each topic in point.topics
+                      .topic #{topic}
+
+      if skills.useWords
+        .section
+          script const __skillsWords__ = !{JSON.stringify(skillsWords)};
+          .header Skills
+          .skills-words
+
+      if !skills.useWords && skillsList && skillsList.length > 0
+        .section
+          .header Skills
+          .skills-list
+            each skill in skillsList
+              .skill
+                .bullet
+                .value !{richText(skill)}
+
+      if profile && profile.profile
+        .section
+          .header Profile
+          .profile !{richText(profile.profile)}
