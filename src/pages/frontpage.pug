@@ -60,6 +60,15 @@ block main
                       span #{info.contacts.github}
                       span.link-icon !{textFile(asset('icons/link.svg'))}
 
+              if info.contacts.linkedin
+                .contact
+                  .icon !{textFile(asset('icons/linkedin.svg'))}
+                  .value 
+                    a(href=`https://linkedin.com/in/${info.contacts.linkedin}`)
+                      span.muted linkedin.com/in/
+                      span #{info.contacts.linkedin}
+                      span.link-icon !{textFile(asset('icons/link.svg'))}
+
               if info.contacts.website
                 .contact
                   .icon !{textFile(asset('icons/website.svg'))}
