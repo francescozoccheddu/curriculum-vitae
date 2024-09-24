@@ -1,7 +1,7 @@
 [
   "Programming (§C§, §C++§, §C#§, §Java§, §Python§, §JavaScript§, §TypeScript§, §Kotlin§, §Scala§, §AVR Assembly§, §Caml§, §MATLAB§)",
   "GUI development (§WPF§, §UWP§, §WinUI§, §Win32§, §Qt§, §Android SDK§, §Web§, §React-Native§, §SwiftUI§)",
-  "Low-level graphics with §OpenGL§ and §Direct3D§",
+  "Low-level graphics with §OpenGL§ and §Direct3D§ and VR development with §OpenXR§",
   "Videogame development with §Unity§ and §Unreal Engine§ and low-level engine development from scratch",
   "Front-end web development (§HTML§, §CSS§, §ES6§, §Node§, §React§, §NextJS§, §Rollup/Webpack§)",
   "Back-end web development (§Java Web§, §Node§, §Django§, §WSGI§, §DBMSs§, §Play§)",
