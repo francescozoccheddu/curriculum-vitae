@@ -1,5 +1,5 @@
 import { Canvas, choosers, positioners } from '@francescozoccheddu/2d-bin-packing';
-import prand from 'pure-rand';
+import { Random } from 'random';
 import { roundCorners } from 'svg-round-corners';
 
 type Word = Readonly<{
@@ -153,11 +153,10 @@ function layoutWordClouds(rect: DOMRect, labelRect: DOMRect, items: readonly SVG
     width: labelRect.width,
     height: labelRect.height,
   });
-  const random = prand.xoroshiro128plus(seed);
+  const random = new Random(seed);
   const mutItems = [...items];
   for (let i = mutItems.length - 1; i > 0; i--) {
-    const j = prand.uniformIntDistribution(0, i)(random)[0];
-    random.unsafeNext();
+    const j = random.uniformInt(0, i)();
     const old = mutItems[j]!;
     mutItems[j] = mutItems[i]!;
     mutItems[i] = old;
