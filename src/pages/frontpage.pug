@@ -100,7 +100,7 @@ block main
         .filler
         .update-date 
           span Updated 
-          span.today
+          span #{(info.updateDate ? new Date(info.updateDate) : new Date()).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' })}
 
     .frontpage-main
 
