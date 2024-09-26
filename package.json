@@ -18,19 +18,19 @@
   },
   "homepage": "https://github.com/francescozoccheddu/curriculum-vitae#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.56.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-simple-import-sort": "^12.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4"
   },
   "dependencies": {
     "@francescozoccheddu/2d-bin-packing": "^0.0.3",
-    "@francescozoccheddu/pidby": "^0.0.15",
+    "@francescozoccheddu/pidby": "^0.0.16",
     "array-shuffle": "^3.0.0",
-    "pure-rand": "^6.0.4",
+    "pure-rand": "^6.1.0",
     "svg-round-corners": "^0.4.3"
   }
 }
