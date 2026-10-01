@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/francescozoccheddu/curriculum-vitae#readme",
   "scripts": {
+    "prepare": "lefthook install",
     "dev": "bun --watch framework/main.ts",
     "start": "bun framework/main.ts",
     "lint": "tsc -b && biome check"
