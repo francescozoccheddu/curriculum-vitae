@@ -1,4 +1,4 @@
 {
-  "extends": "./shared/tsconfig.react.json",
+  "extends": "./tsconfig.base.json",
   "include": ["../../content"]
 }

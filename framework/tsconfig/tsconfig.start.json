@@ -1,7 +1,0 @@
-{
-  "extends": "./shared/tsconfig.react.json",
-  "compilerOptions": {
-    "types": ["bun"]
-  },
-  "include": ["../start"]
-}

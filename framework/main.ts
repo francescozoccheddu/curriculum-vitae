@@ -1,5 +1,5 @@
 import { cac } from "cac";
-import { renderPdf } from "framework/start/render";
+import { renderPdf } from "framework/render";
 import ora from "ora";
 
 const cli = cac("curriculum-vitae");
