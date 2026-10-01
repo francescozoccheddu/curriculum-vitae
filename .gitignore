@@ -1,5 +1,15 @@
-/out.pdf
-/node_modules/
-/.vscode/*
-!/.vscode/extensions.json
-!/.vscode/settings.json
+# cache
+node_modules
+*.tsbuildinfo
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# output
+**.pdf

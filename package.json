@@ -1,12 +1,9 @@
 {
   "name": "curriculum-vitae",
   "description": "My curriculum vitae",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "npx pidby dev ./config.yml",
-    "start": "npx pidby run ./config.yml ./out.pdf"
-  },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/francescozoccheddu/curriculum-vitae.git"
@@ -17,20 +14,32 @@
     "url": "https://github.com/francescozoccheddu/curriculum-vitae/issues"
   },
   "homepage": "https://github.com/francescozoccheddu/curriculum-vitae#readme",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.18.0",
-    "@typescript-eslint/parser": "^7.18.0",
-    "eslint": "^8.57.1",
-    "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.30.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-unused-imports": "^4.1.4"
+  "scripts": {
+    "dev": "vite -c framework/dev/vite.config.ts",
+    "start": "bun framework/start/main.ts",
+    "lint": "tsc -b && biome check"
   },
   "dependencies": {
-    "@francescozoccheddu/2d-bin-packing": "^0.0.3",
-    "@francescozoccheddu/pidby": "^0.0.16",
-    "array-shuffle": "^3.0.0",
-    "random": "^5.1.0",
-    "svg-round-corners": "^0.4.3"
+    "@react-pdf/renderer": "^4.9.0",
+    "cac": "^7.0.0",
+    "ora": "^9.4.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "remeda": "^2.50.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@tsconfig/strictest": "^2.0.8",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "lefthook": "^2.1.16",
+    "type-fest": "^5.10.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  },
+  "engines": {
+    "bun": ">=1.3.10"
   }
 }

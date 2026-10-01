@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "paths": {
+      "*": ["./*"]
+    }
+  },
+  "references": [
+    { "path": "./framework/tsconfig/tsconfig.content.json" },
+    { "path": "./framework/tsconfig/tsconfig.start.json" },
+    { "path": "./framework/tsconfig/tsconfig.dev.json" },
+    { "path": "./framework/tsconfig/tsconfig.node.json" }
+  ]
+}

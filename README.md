@@ -1,12 +1,15 @@
 # curriculum-vitae
+
 My curriculum vitae.
 
 ## Installation
-Clone the repository and all its submodules and run `npm ci`:
+
+Clone the repository and all its submodules and run `bun ci`:
+
 ```shell
 git clone https://github.com/francescozoccheddu/curriculum-vitae.git --recurse-submodules
 cd curriculum-vitae
-npm ci
+bun ci
 ```
 
 > [!NOTE]  
@@ -16,14 +19,16 @@ npm ci
 
 ### Build
 
-Run `npm start` then check the output `out.pdf` file:
+Run `bun start` then check the output `out.pdf` file:
+
 ```shell
-npm start
+bun start
 ```
 
 ### Development
 
-Run `npm run dev` then open `http://127.0.0.1:3000/src/pages/frontpage.pug` in the browser:
+Run `bun dev` then open `http://127.0.0.1:5173` in the browser:
+
 ```shell
-npm run dev
+bun dev
 ```
