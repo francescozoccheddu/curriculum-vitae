@@ -1,3 +1,5 @@
+rc: "{root}/.lefthookrc"
+
 pre-commit:
   commands:
     check:

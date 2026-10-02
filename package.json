@@ -25,7 +25,8 @@
     "cac": "^7.0.0",
     "ora": "^9.4.1",
     "react": "^19.2.8",
-    "remeda": "^2.50.0"
+    "remeda": "^2.50.0",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
