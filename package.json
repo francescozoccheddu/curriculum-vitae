@@ -16,9 +16,10 @@
   "homepage": "https://github.com/francescozoccheddu/curriculum-vitae#readme",
   "scripts": {
     "prepare": "lefthook install",
-    "dev": "bun --watch src/main.ts",
-    "start": "bun src/main.ts",
-    "lint": "tsc --noEmit && biome check"
+    "dev": "bun --watch src/scripts/export-pdf.ts",
+    "start": "bun src/scripts/export-pdf.ts",
+    "lint": "tsc --noEmit && biome check",
+    "export-descriptor-schema": "bun src/scripts/export-descriptor-schema.ts"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.9.0",

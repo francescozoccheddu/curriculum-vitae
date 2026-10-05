@@ -105,7 +105,7 @@ const colorSchema = z
   })
   .readonly();
 
-const descriptorSchema = z
+export const descriptorSchema = z
   .strictObject({
     profile: profileSchema.nullable().optional(),
     history: z.array(pointSchema).nullable().optional().readonly(),
@@ -137,3 +137,5 @@ export async function loadDescriptor(path: string): Promise<Descriptor> {
   const json = await readTextFile(path);
   return descriptorSchema.parse(JSON.parse(json));
 }
+
+export const descriptorJsonSchema = descriptorSchema.toJSONSchema();
