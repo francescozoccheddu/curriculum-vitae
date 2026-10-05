@@ -133,8 +133,8 @@ export type Color = z.infer<typeof colorSchema>;
 
 export type Descriptor = z.infer<typeof descriptorSchema>;
 
-export async function loadDescriptor(path: string): Promise<Descriptor> {
-  const json = await readTextFile(path);
+export async function loadDescriptorFile(file: string): Promise<Descriptor> {
+  const json = await readTextFile(file);
   const data = JSON.parse(json);
   if (data && typeof data === "object" && "$schema" in data) {
     delete data.$schema;

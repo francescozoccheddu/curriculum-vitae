@@ -1,6 +1,6 @@
 import { Document, Page, StyleSheet, Text, View } from "@react-pdf/renderer";
+import type { Descriptor } from "@/utils/descriptor";
 
-// Create styles
 const styles = StyleSheet.create({
   page: {
     padding: 48,
@@ -28,8 +28,12 @@ const styles = StyleSheet.create({
   },
 });
 
-// Create Document Component
-export function Content() {
+export type ContentProps = Readonly<{
+  descriptor: Descriptor;
+}>;
+
+// biome-ignore lint/correctness/noUnusedFunctionParameters: TODO
+export function Content(p: ContentProps) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>

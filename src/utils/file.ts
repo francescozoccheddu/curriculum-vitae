@@ -1,10 +1,10 @@
-export async function readTextFile(path: string): Promise<string> {
-  return await Bun.file(path).text();
+export async function readTextFile(file: string): Promise<string> {
+  return await Bun.file(file).text();
 }
 
 export async function writeTextFile(
-  path: string,
+  file: string,
   content: string,
 ): Promise<void> {
-  await Bun.write(path, content);
+  await Bun.write(file, content);
 }

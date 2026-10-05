@@ -5,11 +5,11 @@ import { renderPdf } from "@/render";
 const cli = cac("curriculum-vitae");
 
 cli
-  .command("<input> <output>", "Generate the PDF file of the curriculum")
-  .action(async (_input: string, output: string) => {
+  .command("<descriptor> <output>", "Generate the PDF file of the curriculum")
+  .action(async (descriptor: string, output: string) => {
     const spinner = ora(`Generating PDF in ${output}…`).start();
     try {
-      await renderPdf(output);
+      await renderPdf(descriptor, output);
       spinner.succeed(`PDF successfully saved to ${output}.`);
     } catch (error) {
       spinner.fail(`Failed to generate PDF: ${error}`);
