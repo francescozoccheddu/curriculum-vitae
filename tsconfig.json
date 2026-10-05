@@ -1,12 +1,35 @@
 {
-  "files": [],
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
+    "target": "es2025",
+    "lib": ["ES2025"],
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "types": ["bun"],
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "paths": {
-      "*": ["./*"]
-    }
+      "@/*": ["./src/*"]
+    },
+
+    // Bundler mode
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    // Best practices
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Some stricter flags (disabled by default)
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noPropertyAccessFromIndexSignature": false
   },
-  "references": [
-    { "path": "./framework/tsconfig/tsconfig.framework.json" },
-    { "path": "./framework/tsconfig/tsconfig.content.json" }
-  ]
+  "include": ["src"]
 }
