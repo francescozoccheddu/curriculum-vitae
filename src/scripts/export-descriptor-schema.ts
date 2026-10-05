@@ -6,9 +6,8 @@ import { writeTextFile } from "@/utils/file";
 const cli = cac("curriculum-vitae");
 
 cli
-  .command("", "Generate the JSON schema for the descriptor")
-  .action(async () => {
-    const output = "./schema/descriptor.json";
+  .command("<output>", "Generate the JSON schema for the descriptor")
+  .action(async (output: string) => {
     const spinner = ora(`Generating descriptor schema in ${output}…`).start();
     try {
       await writeTextFile(

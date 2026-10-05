@@ -5,8 +5,8 @@ import { renderPdf } from "@/render";
 const cli = cac("curriculum-vitae");
 
 cli
-  .command("[output]", "Generate the PDF file of the curriculum")
-  .action(async (output = "./cv.pdf") => {
+  .command("<input> <output>", "Generate the PDF file of the curriculum")
+  .action(async (_input: string, output: string) => {
     const spinner = ora(`Generating PDF in ${output}…`).start();
     try {
       await renderPdf(output);
