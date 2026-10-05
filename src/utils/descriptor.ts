@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { readTextFile } from "@/utils/file";
 
 const textSchema = z
   .string()
@@ -70,7 +71,7 @@ const profileSchema = z
   })
   .readonly();
 
-export const pointSchema = z
+const pointSchema = z
   .strictObject({
     title: textSchema,
     at: textSchema.nullable().optional(),
@@ -80,7 +81,7 @@ export const pointSchema = z
   })
   .readonly();
 
-export const firstLevelPoint = pointSchema.and(
+const firstLevelPoint = pointSchema.and(
   z
     .strictObject({
       children: z.array(pointSchema).nullable().optional().readonly(),
@@ -88,7 +89,7 @@ export const firstLevelPoint = pointSchema.and(
     .readonly(),
 );
 
-export const tagSchema = z
+const tagSchema = z
   .strictObject({
     id: idSchema,
     title: textSchema,
@@ -97,14 +98,14 @@ export const tagSchema = z
   })
   .readonly();
 
-export const colorSchema = z
+const colorSchema = z
   .strictObject({
     id: idSchema,
     color: colorHexSchema,
   })
   .readonly();
 
-export const descriptorSchema = z
+const descriptorSchema = z
   .strictObject({
     profile: profileSchema.nullable().optional(),
     history: z.array(pointSchema).nullable().optional().readonly(),
@@ -131,3 +132,8 @@ export type Tag = z.infer<typeof tagSchema>;
 export type Color = z.infer<typeof colorSchema>;
 
 export type Descriptor = z.infer<typeof descriptorSchema>;
+
+export async function loadDescriptor(path: string): Promise<Descriptor> {
+  const json = await readTextFile(path);
+  return descriptorSchema.parse(JSON.parse(json));
+}
