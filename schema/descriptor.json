@@ -408,7 +408,11 @@
           "type": "null"
         }
       ]
+    },
+    "$schema": {
+      "type": "string"
     }
   },
+  "required": ["$schema"],
   "additionalProperties": false
 }

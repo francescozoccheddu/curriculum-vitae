@@ -81,13 +81,13 @@ const pointSchema = z
   })
   .readonly();
 
-const firstLevelPoint = pointSchema.and(
-  z
-    .strictObject({
-      children: z.array(pointSchema).nullable().optional().readonly(),
-    })
-    .readonly(),
-);
+const firstLevelPoint = pointSchema
+  .unwrap()
+  .extend({
+    children: z.array(pointSchema).nullable().optional().readonly(),
+  })
+  .strict()
+  .readonly();
 
 const tagSchema = z
   .strictObject({
@@ -135,7 +135,18 @@ export type Descriptor = z.infer<typeof descriptorSchema>;
 
 export async function loadDescriptor(path: string): Promise<Descriptor> {
   const json = await readTextFile(path);
-  return descriptorSchema.parse(JSON.parse(json));
+  const data = JSON.parse(json);
+  if (data && typeof data === "object" && "$schema" in data) {
+    delete data.$schema;
+  }
+  return descriptorSchema.parse(data);
 }
 
-export const descriptorJsonSchema = descriptorSchema.toJSONSchema();
+export const descriptorJsonSchema = descriptorSchema
+  .unwrap()
+  .extend({
+    $schema: z.string(),
+  })
+  .strict()
+  .readonly()
+  .toJSONSchema();
