@@ -258,6 +258,138 @@
                     "type": "null"
                   }
                 ]
+              },
+              "grade": {
+                "anyOf": [
+                  {
+                    "readOnly": true,
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string",
+                        "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                      },
+                      "over": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": ["value"],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "children": {
+                "readOnly": true,
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "readOnly": true,
+                      "type": "object",
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                        },
+                        "at": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "year": {
+                          "anyOf": [
+                            {
+                              "type": "number",
+                              "minimum": 1900,
+                              "maximum": 2100
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "description": {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "tags": {
+                          "readOnly": true,
+                          "anyOf": [
+                            {
+                              "type": "array",
+                              "items": {
+                                "type": "string",
+                                "pattern": "^[a-z0-9-]+$"
+                              }
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "grade": {
+                          "anyOf": [
+                            {
+                              "readOnly": true,
+                              "type": "object",
+                              "properties": {
+                                "value": {
+                                  "type": "string",
+                                  "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                                },
+                                "over": {
+                                  "anyOf": [
+                                    {
+                                      "type": "string",
+                                      "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                }
+                              },
+                              "required": ["value"],
+                              "additionalProperties": false
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": ["title"],
+                      "additionalProperties": false
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
               }
             },
             "required": ["title"],
@@ -325,6 +457,36 @@
                       "type": "string",
                       "pattern": "^[a-z0-9-]+$"
                     }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "grade": {
+                "anyOf": [
+                  {
+                    "readOnly": true,
+                    "type": "object",
+                    "properties": {
+                      "value": {
+                        "type": "string",
+                        "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                      },
+                      "over": {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": ["value"],
+                    "additionalProperties": false
                   },
                   {
                     "type": "null"

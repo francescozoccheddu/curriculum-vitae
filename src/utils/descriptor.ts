@@ -71,6 +71,13 @@ const profileSchema = z
   })
   .readonly();
 
+const gradeSchema = z
+  .strictObject({
+    value: textSchema,
+    over: textSchema.nullable().optional(),
+  })
+  .readonly();
+
 const pointSchema = z
   .strictObject({
     title: textSchema,
@@ -78,6 +85,7 @@ const pointSchema = z
     year: yearSchema.nullable().optional(),
     description: textSchema.nullable().optional(),
     tags: z.array(idSchema).nullable().optional().readonly(),
+    grade: gradeSchema.nullable().optional(),
   })
   .readonly();
 
@@ -108,7 +116,7 @@ const colorSchema = z
 export const descriptorSchema = z
   .strictObject({
     profile: profileSchema.nullable().optional(),
-    history: z.array(pointSchema).nullable().optional().readonly(),
+    history: z.array(firstLevelPoint).nullable().optional().readonly(),
     moreHistory: z.array(pointSchema).nullable().optional().readonly(),
     tags: z.array(tagSchema).nullable().optional().readonly(),
     colors: z.array(colorSchema).nullable().optional().readonly(),
@@ -122,6 +130,8 @@ export type Contacts = z.infer<typeof contactsSchema>;
 export type Language = z.infer<typeof languageSchema>;
 
 export type Profile = z.infer<typeof profileSchema>;
+
+export type Grade = z.infer<typeof gradeSchema>;
 
 export type Point = z.infer<typeof pointSchema>;
 
