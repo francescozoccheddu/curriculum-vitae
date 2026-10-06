@@ -7,7 +7,7 @@ const textSchema = z
     /^(?! )(?!.* $)(?!.* {2})[^\p{Cc}\p{Cf}\p{Cs}\p{Co}\p{Cn}\p{Extended_Pictographic}\r\n\t]+$/u,
   );
 
-const fileSchema = z.string();
+const urlSchema = z.string();
 
 const colorHexSchema = z.string().regex(/^#[0-9A-F]{6}$/);
 
@@ -67,7 +67,7 @@ const profileSchema = z
     drivingLicense: z.boolean().nullable().optional(),
     languages: z.array(languageSchema).nullable().optional().readonly(),
     bio: textSchema.nullable().optional(),
-    picture: fileSchema.nullable().optional(),
+    picture: urlSchema.nullable().optional(),
   })
   .readonly();
 
@@ -86,6 +86,7 @@ const pointSchema = z
     description: textSchema.nullable().optional(),
     tags: z.array(idSchema).nullable().optional().readonly(),
     grade: gradeSchema.nullable().optional(),
+    url: urlSchema.nullable().optional(),
   })
   .readonly();
 
@@ -101,7 +102,7 @@ const tagSchema = z
   .strictObject({
     id: idSchema,
     title: textSchema,
-    logo: fileSchema.nullable().optional(),
+    logo: urlSchema.nullable().optional(),
     color: idSchema.nullable().optional(),
   })
   .readonly();

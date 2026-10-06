@@ -289,6 +289,9 @@
                   }
                 ]
               },
+              "url": {
+                "type": ["string", "null"]
+              },
               "children": {
                 "readOnly": true,
                 "anyOf": [
@@ -380,6 +383,9 @@
                               "type": "null"
                             }
                           ]
+                        },
+                        "url": {
+                          "type": ["string", "null"]
                         }
                       },
                       "required": ["title"],
@@ -492,6 +498,9 @@
                     "type": "null"
                   }
                 ]
+              },
+              "url": {
+                "type": ["string", "null"]
               }
             },
             "required": ["title"],
