@@ -107,6 +107,13 @@ const tagSchema = z
   })
   .readonly();
 
+const skillSchema = z
+  .strictObject({
+    description: textSchema.nullable().optional(),
+    tags: z.array(idSchema).nullable().optional().readonly(),
+  })
+  .readonly();
+
 const colorSchema = z
   .strictObject({
     id: idSchema,
@@ -119,6 +126,7 @@ export const descriptorSchema = z
     profile: profileSchema.nullable().optional(),
     history: z.array(firstLevelPoint).nullable().optional().readonly(),
     moreHistory: z.array(pointSchema).nullable().optional().readonly(),
+    skills: z.array(skillSchema).nullable().optional().readonly(),
     tags: z.array(tagSchema).nullable().optional().readonly(),
     colors: z.array(colorSchema).nullable().optional().readonly(),
   })
@@ -137,6 +145,8 @@ export type Grade = z.infer<typeof gradeSchema>;
 export type Point = z.infer<typeof pointSchema>;
 
 export type FirstLevelPoint = z.infer<typeof firstLevelPoint>;
+
+export type Skill = z.infer<typeof skillSchema>;
 
 export type Tag = z.infer<typeof tagSchema>;
 

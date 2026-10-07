@@ -512,6 +512,50 @@
         }
       ]
     },
+    "skills": {
+      "readOnly": true,
+      "anyOf": [
+        {
+          "type": "array",
+          "items": {
+            "readOnly": true,
+            "type": "object",
+            "properties": {
+              "description": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^(?! )(?!.* $)(?!.* {2})[^\\p{Cc}\\p{Cf}\\p{Cs}\\p{Co}\\p{Cn}\\p{Extended_Pictographic}\\r\\n\\t]+$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "tags": {
+                "readOnly": true,
+                "anyOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9-]+$"
+                    }
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
     "tags": {
       "readOnly": true,
       "anyOf": [
