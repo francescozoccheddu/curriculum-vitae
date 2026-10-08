@@ -16,8 +16,8 @@
   "homepage": "https://github.com/francescozoccheddu/curriculum-vitae#readme",
   "scripts": {
     "prepare": "lefthook install",
-    "dev": "bun --watch src/scripts/export-pdf.ts data/main/cv.json cv.pdf",
-    "start": "bun src/scripts/export-pdf.ts data/main/cv.json cv.pdf",
+    "dev": "bun --watch src/scripts/export-pdf.ts data/cv.json cv.pdf",
+    "start": "bun src/scripts/export-pdf.ts data/cv.json cv.pdf",
     "lint": "tsc --noEmit && biome check",
     "export-descriptor-schema": "bun src/scripts/export-descriptor-schema.ts schema/descriptor.json"
   },

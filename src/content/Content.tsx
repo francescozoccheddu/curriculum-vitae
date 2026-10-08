@@ -26,7 +26,6 @@ import type {
   Descriptor,
   FirstLevelPoint,
   Grade,
-  Language,
   Point,
   Profile,
   Skill,
@@ -77,36 +76,43 @@ const styles = StyleSheet.create({
     bottom: 14,
     left: 40,
     right: 40,
+    flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
+  },
+  footerSpacer: {
+    width: 35,
   },
   pageNumber: {
+    width: 35,
     fontSize: 7.5,
     color: MUTED,
-    marginBottom: 3,
+    textAlign: "right",
   },
   disclaimer: {
+    flex: 1,
     fontSize: 5.5,
     lineHeight: 1.25,
     color: MUTED,
     textAlign: "center",
+    paddingHorizontal: 8,
   },
   header: {
+    marginBottom: 16,
+  },
+  profileMain: {
     flexDirection: "row",
-    paddingBottom: 14,
-    marginBottom: 14,
-    borderBottomWidth: 1,
-    borderBottomColor: "#e4e4e7",
+    alignItems: "flex-start",
   },
   photo: {
-    width: 90,
-    height: 90,
-    borderRadius: 45,
+    width: 76,
+    height: 76,
+    borderRadius: 38,
     objectFit: "cover",
     marginRight: 16,
   },
   info: {
     flex: 1,
-    marginRight: 16,
   },
   name: {
     fontSize: 20,
@@ -115,26 +121,61 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: STRONG,
   },
-  meta: {
+  metaRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+    marginBottom: 6,
+    rowGap: 2,
+  },
+  metaText: {
     color: MUTED,
-    marginBottom: 4,
+    marginRight: 6,
+  },
+  langChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#f4f4f5",
+    paddingVertical: 1.5,
+    paddingHorizontal: 5,
+    borderRadius: 6,
+    marginRight: 4,
+  },
+  langCode: {
+    fontSize: 7.5,
+    fontWeight: "bold",
+    color: STRONG,
+  },
+  langSep: {
+    fontSize: 7,
+    color: LINE_COLOR,
+    marginHorizontal: 3,
+  },
+  langLevel: {
+    fontSize: 7,
+    color: MUTED,
   },
   contacts: {
-    width: 165,
-    fontSize: 8.5,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 11,
   },
   contact: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 2.5,
+    marginHorizontal: 9,
   },
   contactIcon: {
-    width: 8,
-    height: 8,
-    marginRight: 5,
+    width: 7.5,
+    height: 7.5,
+    marginRight: 3.5,
     objectFit: "contain",
+    position: "relative",
+    top: 0.5,
   },
   link: {
+    fontSize: 7.2,
     color: TEXT,
     textDecoration: "none",
   },
@@ -180,27 +221,45 @@ const styles = StyleSheet.create({
     color: STRONG,
   },
   subtitle: {
+    marginLeft: 4,
     fontWeight: "normal",
     color: MUTED,
   },
   description: {
     marginTop: 1,
   },
-  urlContainer: {
+  titleRow: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 1,
+    flexWrap: "wrap",
   },
-  urlIcon: {
-    width: 7,
-    height: 7,
-    marginRight: 3,
+  titleLink: {
+    marginLeft: 3,
+    position: "relative",
+    top: -3,
+  },
+  titleLinkIcon: {
+    width: 6,
+    height: 6,
     objectFit: "contain",
   },
-  url: {
-    fontSize: 8,
+  gradeChip: {
+    flexDirection: "row",
+    alignItems: "baseline",
+    backgroundColor: `${ACCENT}18`,
+    paddingVertical: 1.5,
+    paddingHorizontal: 4,
+    borderRadius: 4,
+    marginLeft: 4,
+  },
+  gradeVal: {
+    fontSize: 7.5,
+    fontWeight: "bold",
     color: ACCENT,
-    textDecoration: "none",
+  },
+  gradeOver: {
+    fontSize: 6,
+    color: ACCENT,
   },
   chips: {
     flexDirection: "row",
@@ -210,20 +269,19 @@ const styles = StyleSheet.create({
   chip: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 2.5,
-    paddingHorizontal: 6,
-    borderRadius: 8,
-    marginRight: 3,
-    marginBottom: 3,
+    marginRight: 7,
+    marginBottom: 2.5,
   },
   chipText: {
     fontSize: 7.5,
-    lineHeight: 1,
+    fontWeight: "medium",
   },
   chipLogo: {
     width: 7.5,
     height: 7.5,
-    marginRight: 3,
+    marginRight: 2.5,
+    position: "relative",
+    top: 0.75,
     objectFit: "contain",
   },
   projects: {
@@ -309,22 +367,6 @@ function computeAge(birthDate: string): number {
   return age;
 }
 
-const languageNames = new Intl.DisplayNames(["en"], { type: "language" });
-
-function formatLanguage(language: Language): string {
-  const name = languageNames.of(language.language) ?? language.language;
-  return language.level ? `${name} (${language.level})` : name;
-}
-
-function formatGrade(grade: Grade): string {
-  return grade.over ? `${grade.value}/${grade.over}` : grade.value;
-}
-
-/** Strips the protocol and the trailing slash for a compact display. */
-function formatUrl(url: string): string {
-  return url.replace(/^[a-z]+:\/\//i, "").replace(/\/$/, "");
-}
-
 function Header(p: Readonly<{ profile: Profile }>) {
   const { profile } = p;
   const fullName = [profile.firstName, profile.lastName]
@@ -333,20 +375,31 @@ function Header(p: Readonly<{ profile: Profile }>) {
   const meta = [
     profile.birthDate ? `${computeAge(profile.birthDate)} years old` : null,
     profile.contacts?.location,
-    profile.drivingLicense ? "Driving license" : null,
-    ...(profile.languages ?? []).map(formatLanguage),
   ].filter(Boolean);
   return (
     <View style={styles.header}>
-      {profile.picture ? (
-        <Image src={profile.picture} style={styles.photo} />
-      ) : null}
-      <View style={styles.info}>
-        <Text style={styles.name}>{fullName}</Text>
-        {meta.length > 0 ? (
-          <Text style={styles.meta}>{meta.join(SEPARATOR)}</Text>
+      <View style={styles.profileMain}>
+        {profile.picture ? (
+          <Image src={profile.picture} style={styles.photo} />
         ) : null}
-        {profile.bio ? <Text>{richText(profile.bio)}</Text> : null}
+        <View style={styles.info}>
+          <Text style={styles.name}>{fullName}</Text>
+          <View style={styles.metaRow}>
+            {meta.length > 0 ? (
+              <Text style={styles.metaText}>{meta.join(SEPARATOR)}</Text>
+            ) : null}
+            {profile.languages?.map((lang) => (
+              <View key={lang.language} style={styles.langChip}>
+                <Text style={styles.langCode}>
+                  {lang.language.toUpperCase()}
+                </Text>
+                <Text style={styles.langSep}>|</Text>
+                <Text style={styles.langLevel}>{lang.level}</Text>
+              </View>
+            ))}
+          </View>
+          {profile.bio ? <Text>{richText(profile.bio)}</Text> : null}
+        </View>
       </View>
       {profile.contacts ? <ContactList contacts={profile.contacts} /> : null}
     </View>
@@ -480,7 +533,7 @@ function Chip(
 ) {
   const { id, tag, color } = p;
   return (
-    <View style={[styles.chip, { backgroundColor: `${color}1f` }]}>
+    <View style={styles.chip}>
       {tag?.logo ? <Image src={tag.logo} style={styles.chipLogo} /> : null}
       <Text style={[styles.chipText, { color }]}>{tag?.title ?? id}</Text>
     </View>
@@ -506,7 +559,19 @@ function Chips(
   );
 }
 
-/** Title line, followed by the optional description, URL and tags. */
+function GradeChip(p: Readonly<{ grade: Grade }>) {
+  const { grade } = p;
+  return (
+    <View style={styles.gradeChip}>
+      <Text style={styles.gradeVal}>{grade.value}</Text>
+      {grade.over ? (
+        <Text style={styles.gradeOver}>{`/${grade.over}`}</Text>
+      ) : null}
+    </View>
+  );
+}
+
+/** Title line, followed by the optional description and tags. */
 function PointBody(
   p: Readonly<{
     point: Point;
@@ -515,35 +580,25 @@ function PointBody(
   }>,
 ) {
   const { point, descriptor, showYear } = p;
-  const subtitle = [
-    point.at ? richText(point.at) : null,
-    point.grade ? formatGrade(point.grade) : null,
-  ].filter((part) => part !== null);
   return (
     <>
-      <Text style={styles.title}>
+      <View style={styles.titleRow}>
         {showYear && point.year ? (
           <Text style={styles.projectYear}>{`${point.year}  `}</Text>
         ) : null}
-        {richText(point.title)}
-        {subtitle.map((part, i) => (
-          // biome-ignore lint/suspicious/noArrayIndexKey: static parts
-          <Text key={i} style={styles.subtitle}>
-            {SEPARATOR}
-            {part}
-          </Text>
-        ))}
-      </Text>
+        <Text style={styles.title}>{richText(point.title)}</Text>
+        {point.grade ? <GradeChip grade={point.grade} /> : null}
+        {point.url ? (
+          <Link src={point.url} style={styles.titleLink}>
+            <Image src={linkIcon} style={styles.titleLinkIcon} />
+          </Link>
+        ) : null}
+        {point.at ? (
+          <Text style={styles.subtitle}>{richText(point.at)}</Text>
+        ) : null}
+      </View>
       {point.description ? (
         <Text style={styles.description}>{richText(point.description)}</Text>
-      ) : null}
-      {point.url ? (
-        <View style={styles.urlContainer}>
-          <Image src={linkIcon} style={styles.urlIcon} />
-          <Link src={point.url} style={styles.url}>
-            {formatUrl(point.url)}
-          </Link>
-        </View>
       ) : null}
       <Chips ids={point.tags ?? []} descriptor={descriptor} />
     </>
@@ -573,8 +628,10 @@ function Projects(
 ) {
   const { points, descriptor } = p;
   return (
-    <View break>
-      <Text style={styles.sectionTitle}>Other projects</Text>
+    <View>
+      <Text style={styles.sectionTitle} minPresenceAhead={120}>
+        Other projects
+      </Text>
       <View style={styles.projects}>
         {points.map((point, i) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: static list
@@ -592,10 +649,8 @@ function Skills(
 ) {
   const { skills, descriptor } = p;
   return (
-    <View>
-      <Text style={styles.sectionTitle} minPresenceAhead={120}>
-        Skills & interests
-      </Text>
+    <View break>
+      <Text style={styles.sectionTitle}>Skills & interests</Text>
       <View style={styles.skills}>
         {skills.map((skill, i) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: static list
@@ -624,23 +679,24 @@ export function Content(p: ContentProps) {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.footer} fixed>
+          <View style={styles.footerSpacer} />
+          <Text style={styles.disclaimer}>{DISCLAIMER}</Text>
           <Text
             style={styles.pageNumber}
             render={({ pageNumber, totalPages }) =>
               `${pageNumber} / ${totalPages}`
             }
           />
-          <Text style={styles.disclaimer}>{DISCLAIMER}</Text>
         </View>
         {descriptor.profile ? <Header profile={descriptor.profile} /> : null}
         {rows.map((row) => (
           <TimelineRow key={row.key} row={row} descriptor={descriptor} />
         ))}
-        {skills.length > 0 ? (
-          <Skills skills={skills} descriptor={descriptor} />
-        ) : null}
         {moreHistory.length > 0 ? (
           <Projects points={moreHistory} descriptor={descriptor} />
+        ) : null}
+        {skills.length > 0 ? (
+          <Skills skills={skills} descriptor={descriptor} />
         ) : null}
       </Page>
     </Document>
