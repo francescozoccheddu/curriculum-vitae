@@ -3,7 +3,7 @@ import linkIcon from "@/assets/icons/link.svg";
 import { Chips } from "@/pdf/components/common/Chips";
 import { GradeChip } from "@/pdf/components/common/GradeChip";
 import { richText } from "@/pdf/richText";
-import { MUTED, sharedStyles } from "@/pdf/theme";
+import { SUBTLE, sharedStyles } from "@/pdf/theme";
 import type { Descriptor, Point } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   projectYear: {
     fontSize: 7.2,
     fontWeight: "bold",
-    color: MUTED,
+    color: SUBTLE,
     marginRight: 4,
   },
   titleLink: {

@@ -10,8 +10,6 @@ import {
   LINE,
   LINE_COLOR,
   ROW_GAP,
-  STRONG,
-  SUBTLE,
 } from "@/pdf/theme";
 
 const DOT_LEAD_IN = DOT_0 / 2;
@@ -109,7 +107,7 @@ export function Gutter(p: Readonly<{ row: Row }>) {
             width: dotSize,
             height: dotSize,
             borderRadius: dotSize / 2,
-            backgroundColor: row.depth === 0 ? STRONG : SUBTLE,
+            backgroundColor: LINE_COLOR,
           },
         ]}
       />

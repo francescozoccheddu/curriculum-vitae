@@ -9,7 +9,7 @@ import {
 const styles = StyleSheet.create({
   footer: {
     position: "absolute",
-    bottom: PAGE_PADDING_V,
+    bottom: PAGE_PADDING_V - 3,
     left: PAGE_PADDING_H,
     right: PAGE_PADDING_H,
     flexDirection: "row",

@@ -104,7 +104,9 @@ export function ProfileHeader(p: Readonly<{ profile: Profile }>) {
                   {lang.language.toUpperCase()}
                 </Text>
                 <Text style={styles.langSep}>|</Text>
-                <Text style={styles.langLevel}>{lang.level}</Text>
+                <Text style={styles.langLevel}>
+                  {lang.level === "native" ? "Native" : lang.level}
+                </Text>
               </View>
             ))}
           </View>

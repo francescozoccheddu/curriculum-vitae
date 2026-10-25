@@ -19,7 +19,7 @@ Font.register({
 });
 
 export const ACCENT = "#18181b";
-export const LINE_COLOR = "#d4d4d8";
+export const LINE_COLOR = "#a1a1aa";
 export const TEXT = "#3f3f46";
 export const MUTED = "#71717a";
 export const SUBTLE = "#a1a1aa";
@@ -48,7 +48,7 @@ export const CENTER = 5.8;
 
 export const SEPARATOR = "  ·  ";
 export const DISCLAIMER =
-  "Hereby I authorize the processing of my personal data and particular data included in my CV according to the Legislative Decree 30 June 2003, n. 196 “Rules on the protection of personal data” and the GDPR (UE Regulation 2016/679)";
+  "I hereby authorize the processing of my personal data contained in my curriculum vitae in accordance with the GDPR (EU Regulation 2016/679) and Italian Legislative Decree no. 196/2003 (Codice in materia di protezione dei dati personali).";
 
 export const sharedStyles = StyleSheet.create({
   title: {
