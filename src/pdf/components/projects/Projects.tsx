@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   project: {
     width: "50%",
     paddingRight: 16,
-    paddingBottom: 8,
+    paddingBottom: 7,
   },
 });
 
@@ -21,8 +21,8 @@ export function Projects(
 ) {
   const { points, descriptor } = p;
   return (
-    <View>
-      <SectionTitle minPresenceAhead={120}>Other projects</SectionTitle>
+    <View break>
+      <SectionTitle>Other projects</SectionTitle>
       <View style={styles.projects}>
         {points.map((point, i) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: static list

@@ -1,12 +1,12 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { DISCLAIMER, MUTED } from "@/pdf/theme";
+import { DISCLAIMER, PAGE_PADDING_H, SUBTLE } from "@/pdf/theme";
 
 const styles = StyleSheet.create({
   footer: {
     position: "absolute",
-    bottom: 14,
-    left: 40,
-    right: 40,
+    bottom: 12,
+    left: PAGE_PADDING_H,
+    right: PAGE_PADDING_H,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -16,15 +16,15 @@ const styles = StyleSheet.create({
   },
   pageNumber: {
     width: 35,
-    fontSize: 7.5,
-    color: MUTED,
+    fontSize: 6.5,
+    color: SUBTLE,
     textAlign: "right",
   },
   disclaimer: {
     flex: 1,
-    fontSize: 5.5,
+    fontSize: 5,
     lineHeight: 1.25,
-    color: MUTED,
+    color: SUBTLE,
     textAlign: "center",
     paddingHorizontal: 8,
   },

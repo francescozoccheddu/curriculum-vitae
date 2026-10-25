@@ -18,22 +18,30 @@ Font.register({
   ],
 });
 
-export const ACCENT = "#e0301e";
-export const LINE_COLOR = "#a1a1aa";
+export const ACCENT = "#18181b";
+export const LINE_COLOR = "#d4d4d8";
 export const TEXT = "#3f3f46";
 export const MUTED = "#71717a";
+export const SUBTLE = "#a1a1aa";
 export const STRONG = "#18181b";
-export const DEFAULT_TAG_COLOR = "#52525b";
-export const LOGO_HEIGHT = 7.5;
+export const SURFACE = "#f4f4f5";
+export const DEFAULT_TAG_COLOR = "#71717a";
+/** When true, tags ignore the descriptor colors and use DEFAULT_TAG_COLOR. */
+export const MONOCHROME_TAGS = true;
+export const LOGO_HEIGHT = 6.5;
 
-export const LINE = 1.5;
-export const DOT = 8;
-export const YEAR_WIDTH = 34;
-export const GUTTER_WIDTH = 30;
-export const LANE_0 = 6;
-export const LANE_1 = 20;
-export const TRANS_HEIGHT = 14;
-export const CENTER = 9;
+export const PAGE_PADDING_H = 30;
+export const PAGE_PADDING_V = 28;
+export const FONT_SIZE = 8.5;
+
+export const LINE = 0.6;
+export const DOT_0 = 5;
+export const DOT_1 = 3;
+export const YEAR_WIDTH = 24;
+export const GUTTER_WIDTH = 16;
+export const CHILD_INDENT = 10;
+/** Vertical offset of the dot center from the top of a row (title midline). */
+export const CENTER = 5.8;
 
 export const SEPARATOR = "  ·  ";
 export const DISCLAIMER =
@@ -41,23 +49,25 @@ export const DISCLAIMER =
 
 export const sharedStyles = StyleSheet.create({
   title: {
-    fontWeight: "bold",
+    fontWeight: "semibold",
     color: STRONG,
   },
   subtitle: {
-    marginLeft: 4,
+    marginLeft: 5,
     fontWeight: "normal",
     color: MUTED,
   },
   sectionTitle: {
-    fontSize: 11,
-    fontWeight: "bold",
-    color: STRONG,
-    marginTop: 6,
-    marginBottom: 10,
-    paddingBottom: 4,
-    borderBottomWidth: 1,
-    borderBottomColor: "#e4e4e7",
+    fontSize: 7.5,
+    fontWeight: "semibold",
+    color: MUTED,
+    letterSpacing: 1.2,
+    textTransform: "uppercase",
+    marginTop: 4,
+    marginBottom: 8,
+    paddingBottom: 3,
+    borderBottomWidth: 0.5,
+    borderBottomColor: LINE_COLOR,
   },
   link: {
     color: TEXT,

@@ -5,16 +5,24 @@ import { Projects } from "@/pdf/components/projects/Projects";
 import { Skills } from "@/pdf/components/skills/Skills";
 import { buildRows } from "@/pdf/components/timeline/buildRows";
 import { Timeline } from "@/pdf/components/timeline/Timeline";
-import { DEFAULT_TAG_COLOR, TEXT } from "@/pdf/theme";
+import {
+  DEFAULT_TAG_COLOR,
+  FONT_SIZE,
+  PAGE_PADDING_H,
+  PAGE_PADDING_V,
+  TEXT,
+} from "@/pdf/theme";
 import type { Descriptor } from "@/utils/descriptor";
 
 export { DEFAULT_TAG_COLOR };
 
 const styles = StyleSheet.create({
   page: {
-    padding: 40,
+    paddingHorizontal: PAGE_PADDING_H,
+    paddingTop: PAGE_PADDING_V,
+    paddingBottom: PAGE_PADDING_V + 6,
     fontFamily: "Inter",
-    fontSize: 9.5,
+    fontSize: FONT_SIZE,
     color: TEXT,
   },
 });

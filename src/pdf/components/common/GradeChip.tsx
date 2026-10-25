@@ -1,25 +1,25 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { ACCENT } from "@/pdf/theme";
+import { MUTED, SURFACE } from "@/pdf/theme";
 import type { Grade } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
   gradeChip: {
     flexDirection: "row",
     alignItems: "baseline",
-    backgroundColor: `${ACCENT}18`,
-    paddingVertical: 1.5,
-    paddingHorizontal: 4,
-    borderRadius: 4,
+    backgroundColor: SURFACE,
+    paddingVertical: 1,
+    paddingHorizontal: 3.5,
+    borderRadius: 3,
     marginLeft: 4,
   },
   gradeVal: {
-    fontSize: 7.5,
-    fontWeight: "bold",
-    color: ACCENT,
+    fontSize: 6.5,
+    fontWeight: "semibold",
+    color: MUTED,
   },
   gradeOver: {
-    fontSize: 6,
-    color: ACCENT,
+    fontSize: 5.5,
+    color: MUTED,
   },
 });
 

@@ -6,6 +6,9 @@ import { sharedStyles } from "@/pdf/theme";
 import type { Descriptor, Skill } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
+  section: {
+    marginTop: 8,
+  },
   skills: {
     flexDirection: "row",
     flexWrap: "wrap",
@@ -14,7 +17,7 @@ const styles = StyleSheet.create({
   skill: {
     width: "50%",
     paddingRight: 16,
-    paddingBottom: 8,
+    paddingBottom: 7,
   },
 });
 
@@ -23,8 +26,8 @@ export function Skills(
 ) {
   const { skills, descriptor } = p;
   return (
-    <View break>
-      <SectionTitle>Skills & interests</SectionTitle>
+    <View style={styles.section}>
+      <SectionTitle minPresenceAhead={60}>Skills & interests</SectionTitle>
       <View style={styles.skills}>
         {skills.map((skill, i) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: static list

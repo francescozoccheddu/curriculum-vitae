@@ -3,7 +3,7 @@ import emailIcon from "@/assets/icons/email.svg";
 import githubIcon from "@/assets/icons/github.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import phoneIcon from "@/assets/icons/phone.svg";
-import { TEXT } from "@/pdf/theme";
+import { MUTED } from "@/pdf/theme";
 import type { Contacts as ContactsData } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 11,
+    marginTop: 9,
   },
   contact: {
     flexDirection: "row",
@@ -19,16 +19,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 9,
   },
   contactIcon: {
-    width: 7.5,
-    height: 7.5,
-    marginRight: 3.5,
+    width: 6.5,
+    height: 6.5,
+    marginRight: 3,
     objectFit: "contain",
     position: "relative",
     top: 0.5,
   },
   link: {
-    fontSize: 7.2,
-    color: TEXT,
+    fontSize: 6.8,
+    color: MUTED,
     textDecoration: "none",
   },
 });

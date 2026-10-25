@@ -3,7 +3,7 @@ import linkIcon from "@/assets/icons/link.svg";
 import { Chips } from "@/pdf/components/common/Chips";
 import { GradeChip } from "@/pdf/components/common/GradeChip";
 import { richText } from "@/pdf/richText";
-import { ACCENT, sharedStyles } from "@/pdf/theme";
+import { MUTED, sharedStyles } from "@/pdf/theme";
 import type { Descriptor, Point } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
@@ -13,21 +13,21 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   projectYear: {
-    fontWeight: "bold",
-    color: ACCENT,
+    fontWeight: "medium",
+    color: MUTED,
   },
   titleLink: {
     marginLeft: 3,
     position: "relative",
-    top: -3,
+    top: -2.5,
   },
   titleLinkIcon: {
-    width: 6,
-    height: 6,
+    width: 5,
+    height: 5,
     objectFit: "contain",
   },
   description: {
-    marginTop: 1,
+    marginTop: 0.5,
   },
 });
 

@@ -1,39 +1,40 @@
 import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
 import { Contacts } from "@/pdf/components/profile/Contacts";
 import { richText } from "@/pdf/richText";
-import { LINE_COLOR, MUTED, SEPARATOR, STRONG } from "@/pdf/theme";
+import { LINE_COLOR, MUTED, SEPARATOR, STRONG, SURFACE } from "@/pdf/theme";
 import type { Profile } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
   header: {
-    marginBottom: 16,
+    marginBottom: 12,
   },
   profileMain: {
     flexDirection: "row",
     alignItems: "flex-start",
   },
   photo: {
-    width: 76,
-    height: 76,
-    borderRadius: 38,
+    width: 62,
+    height: 62,
+    borderRadius: 31,
     objectFit: "cover",
-    marginRight: 16,
+    marginRight: 14,
   },
   info: {
     flex: 1,
   },
   name: {
-    fontSize: 20,
-    lineHeight: 1.2,
-    marginBottom: 3,
-    fontWeight: "bold",
+    fontSize: 18,
+    lineHeight: 1.15,
+    marginBottom: 2,
+    fontWeight: "semibold",
+    letterSpacing: -0.3,
     color: STRONG,
   },
   metaRow: {
     flexDirection: "row",
     alignItems: "center",
     flexWrap: "wrap",
-    marginBottom: 6,
+    marginBottom: 4,
     rowGap: 2,
   },
   metaText: {
@@ -43,24 +44,24 @@ const styles = StyleSheet.create({
   langChip: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#f4f4f5",
+    backgroundColor: SURFACE,
     paddingVertical: 1.5,
     paddingHorizontal: 5,
     borderRadius: 6,
     marginRight: 4,
   },
   langCode: {
-    fontSize: 7.5,
-    fontWeight: "bold",
+    fontSize: 6.5,
+    fontWeight: "semibold",
     color: STRONG,
   },
   langSep: {
-    fontSize: 7,
+    fontSize: 6,
     color: LINE_COLOR,
     marginHorizontal: 3,
   },
   langLevel: {
-    fontSize: 7,
+    fontSize: 6.5,
     color: MUTED,
   },
 });

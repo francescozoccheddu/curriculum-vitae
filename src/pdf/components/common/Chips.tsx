@@ -1,25 +1,25 @@
 import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
-import { DEFAULT_TAG_COLOR } from "@/pdf/theme";
+import { DEFAULT_TAG_COLOR, MONOCHROME_TAGS } from "@/pdf/theme";
 import type { Descriptor, Tag } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
   chips: {
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: 3,
+    marginTop: 2.5,
   },
   chip: {
     flexDirection: "row",
     alignItems: "center",
-    marginRight: 7,
-    marginBottom: 2.5,
+    marginRight: 6,
+    marginBottom: 1.5,
   },
   chipText: {
-    fontSize: 7.5,
+    fontSize: 6.8,
     fontWeight: "medium",
   },
   chipLogo: {
-    marginRight: 2.5,
+    marginRight: 2,
     position: "relative",
   },
 });
@@ -48,7 +48,8 @@ export function Chips(
       {ids.map((id) => {
         const tag = tags.get(id);
         const color =
-          (tag?.color ? colors.get(tag.color) : null) ?? DEFAULT_TAG_COLOR;
+          (!MONOCHROME_TAGS && tag?.color ? colors.get(tag.color) : null) ??
+          DEFAULT_TAG_COLOR;
         return <Chip key={id} id={id} tag={tag} color={color} />;
       })}
     </View>

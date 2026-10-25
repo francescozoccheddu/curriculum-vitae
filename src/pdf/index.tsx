@@ -1,6 +1,6 @@
 import ReactPDF from "@react-pdf/renderer";
 import { Content, DEFAULT_TAG_COLOR } from "@/pdf/Content";
-import { LOGO_HEIGHT } from "@/pdf/theme";
+import { LOGO_HEIGHT, MONOCHROME_TAGS } from "@/pdf/theme";
 import { type Descriptor, loadDescriptorFile } from "@/utils/descriptor";
 import { fileExists, readTextFile } from "@/utils/file";
 import { prepareSvgForPdf } from "@/utils/svg";
@@ -21,7 +21,8 @@ async function colorizeDescriptorLogos(
         return tag;
       }
       const color =
-        (tag.color ? colors.get(tag.color) : null) ?? DEFAULT_TAG_COLOR;
+        (!MONOCHROME_TAGS && tag.color ? colors.get(tag.color) : null) ??
+        DEFAULT_TAG_COLOR;
       const svg = await readTextFile(tag.logo);
       const preparedSvg = prepareSvgForPdf(svg, color, LOGO_HEIGHT);
       const base64 = new TextEncoder().encode(preparedSvg).toBase64();
