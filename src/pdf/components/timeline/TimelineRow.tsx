@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { PointBody } from "@/content/components/common/PointBody";
-import type { Row } from "@/content/components/timeline/buildRows";
-import { Gutter } from "@/content/components/timeline/Gutter";
-import { ACCENT, LANE_0, LANE_1, YEAR_WIDTH } from "@/content/theme";
+import { PointBody } from "@/pdf/components/common/PointBody";
+import type { Row } from "@/pdf/components/timeline/buildRows";
+import { Gutter } from "@/pdf/components/timeline/Gutter";
+import { ACCENT, LANE_0, LANE_1, YEAR_WIDTH } from "@/pdf/theme";
 import type { Descriptor } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({

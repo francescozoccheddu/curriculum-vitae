@@ -1,5 +1,5 @@
 import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
-import { DEFAULT_TAG_COLOR } from "@/content/theme";
+import { DEFAULT_TAG_COLOR } from "@/pdf/theme";
 import type { Descriptor, Tag } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
@@ -19,11 +19,8 @@ const styles = StyleSheet.create({
     fontWeight: "medium",
   },
   chipLogo: {
-    width: 7.5,
-    height: 7.5,
     marginRight: 2.5,
     position: "relative",
-    objectFit: "contain",
   },
 });
 

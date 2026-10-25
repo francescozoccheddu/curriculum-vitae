@@ -1,5 +1,5 @@
 import { Path, StyleSheet, Svg, View } from "@react-pdf/renderer";
-import type { Row } from "@/content/components/timeline/buildRows";
+import type { Row } from "@/pdf/components/timeline/buildRows";
 import {
   ACCENT,
   CENTER,
@@ -10,7 +10,7 @@ import {
   LINE,
   LINE_COLOR,
   TRANS_HEIGHT,
-} from "@/content/theme";
+} from "@/pdf/theme";
 
 const styles = StyleSheet.create({
   gutter: {

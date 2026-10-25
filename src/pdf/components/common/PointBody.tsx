@@ -1,10 +1,10 @@
 import { Image, Link, StyleSheet, Text, View } from "@react-pdf/renderer";
 import linkIcon from "@/assets/icons/link.svg";
-import { Chips } from "@/content/components/common/Chips";
-import { GradeChip } from "@/content/components/common/GradeChip";
-import { ACCENT, sharedStyles } from "@/content/theme";
+import { Chips } from "@/pdf/components/common/Chips";
+import { GradeChip } from "@/pdf/components/common/GradeChip";
+import { richText } from "@/pdf/richText";
+import { ACCENT, sharedStyles } from "@/pdf/theme";
 import type { Descriptor, Point } from "@/utils/descriptor";
-import { richText } from "@/utils/richText";
 
 const styles = StyleSheet.create({
   titleRow: {

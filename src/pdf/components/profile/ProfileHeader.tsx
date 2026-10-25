@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Contacts } from "@/content/components/profile/Contacts";
-import { LINE_COLOR, MUTED, SEPARATOR, STRONG } from "@/content/theme";
+import { Contacts } from "@/pdf/components/profile/Contacts";
+import { richText } from "@/pdf/richText";
+import { LINE_COLOR, MUTED, SEPARATOR, STRONG } from "@/pdf/theme";
 import type { Profile } from "@/utils/descriptor";
-import { richText } from "@/utils/richText";
 
 const styles = StyleSheet.create({
   header: {

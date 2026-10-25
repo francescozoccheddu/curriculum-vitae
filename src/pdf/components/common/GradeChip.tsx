@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { ACCENT } from "@/content/theme";
+import { ACCENT } from "@/pdf/theme";
 import type { Grade } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({

@@ -3,7 +3,7 @@ import emailIcon from "@/assets/icons/email.svg";
 import githubIcon from "@/assets/icons/github.svg";
 import linkedinIcon from "@/assets/icons/linkedin.svg";
 import phoneIcon from "@/assets/icons/phone.svg";
-import { TEXT } from "@/content/theme";
+import { TEXT } from "@/pdf/theme";
 import type { Contacts as ContactsData } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({

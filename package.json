@@ -19,11 +19,13 @@
     "dev": "bun --watch src/scripts/export-pdf.ts data/cv.json cv.pdf",
     "start": "bun src/scripts/export-pdf.ts data/cv.json cv.pdf",
     "lint": "tsc --noEmit && biome check",
+    "icon-scaler": "bun src/scripts/icon-scaler.ts data/cv.json",
     "export-descriptor-schema": "bun src/scripts/export-descriptor-schema.ts schema/descriptor.json"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.9.0",
     "cac": "^7.0.0",
+    "open": "^11.0.4",
     "ora": "^9.4.1",
     "react": "^19.2.8",
     "remeda": "^2.50.0",

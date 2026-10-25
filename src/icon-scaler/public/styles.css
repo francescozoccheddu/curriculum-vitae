@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Inter";
+  src: url("../../assets/fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  column-gap: 7pt;
+  row-gap: 5.5pt;
+}
+
+.chip {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: ns-resize;
+}
+
+.chip svg {
+  height: 7.5pt;
+  max-width: 15pt;
+  width: auto;
+  margin-right: 2.5pt;
+  display: block;
+  flex-shrink: 0;
+}
+
+.chip-text {
+  font-size: 7.5pt;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+}

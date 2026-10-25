@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { DISCLAIMER, MUTED } from "@/content/theme";
+import { DISCLAIMER, MUTED } from "@/pdf/theme";
 
 const styles = StyleSheet.create({
   footer: {

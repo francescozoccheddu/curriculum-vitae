@@ -1,11 +1,11 @@
 import { Document, Page, StyleSheet } from "@react-pdf/renderer";
-import { Footer } from "@/content/components/footer/Footer";
-import { ProfileHeader } from "@/content/components/profile/ProfileHeader";
-import { Projects } from "@/content/components/projects/Projects";
-import { Skills } from "@/content/components/skills/Skills";
-import { buildRows } from "@/content/components/timeline/buildRows";
-import { Timeline } from "@/content/components/timeline/Timeline";
-import { DEFAULT_TAG_COLOR, TEXT } from "@/content/theme";
+import { Footer } from "@/pdf/components/footer/Footer";
+import { ProfileHeader } from "@/pdf/components/profile/ProfileHeader";
+import { Projects } from "@/pdf/components/projects/Projects";
+import { Skills } from "@/pdf/components/skills/Skills";
+import { buildRows } from "@/pdf/components/timeline/buildRows";
+import { Timeline } from "@/pdf/components/timeline/Timeline";
+import { DEFAULT_TAG_COLOR, TEXT } from "@/pdf/theme";
 import type { Descriptor } from "@/utils/descriptor";
 
 export { DEFAULT_TAG_COLOR };

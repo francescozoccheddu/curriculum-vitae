@@ -1,3 +1,7 @@
+export async function fileExists(file: string): Promise<boolean> {
+  return await Bun.file(file).exists();
+}
+
 export async function readTextFile(file: string): Promise<string> {
   return await Bun.file(file).text();
 }

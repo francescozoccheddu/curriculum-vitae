@@ -24,6 +24,7 @@ export const TEXT = "#3f3f46";
 export const MUTED = "#71717a";
 export const STRONG = "#18181b";
 export const DEFAULT_TAG_COLOR = "#52525b";
+export const LOGO_HEIGHT = 7.5;
 
 export const LINE = 1.5;
 export const DOT = 8;

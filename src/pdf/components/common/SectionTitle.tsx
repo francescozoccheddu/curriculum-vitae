@@ -1,5 +1,5 @@
 import { Text } from "@react-pdf/renderer";
-import { sharedStyles } from "@/content/theme";
+import { sharedStyles } from "@/pdf/theme";
 
 export function SectionTitle(
   p: Readonly<{ children: string; minPresenceAhead?: number }>,

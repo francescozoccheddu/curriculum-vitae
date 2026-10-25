@@ -1,6 +1,6 @@
 import { StyleSheet, View } from "@react-pdf/renderer";
-import { PointBody } from "@/content/components/common/PointBody";
-import { SectionTitle } from "@/content/components/common/SectionTitle";
+import { PointBody } from "@/pdf/components/common/PointBody";
+import { SectionTitle } from "@/pdf/components/common/SectionTitle";
 import type { Descriptor, Point } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({

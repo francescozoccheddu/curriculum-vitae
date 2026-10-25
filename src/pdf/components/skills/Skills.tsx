@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { Chips } from "@/content/components/common/Chips";
-import { SectionTitle } from "@/content/components/common/SectionTitle";
-import { sharedStyles } from "@/content/theme";
+import { Chips } from "@/pdf/components/common/Chips";
+import { SectionTitle } from "@/pdf/components/common/SectionTitle";
+import { richText } from "@/pdf/richText";
+import { sharedStyles } from "@/pdf/theme";
 import type { Descriptor, Skill } from "@/utils/descriptor";
-import { richText } from "@/utils/richText";
 
 const styles = StyleSheet.create({
   skills: {
