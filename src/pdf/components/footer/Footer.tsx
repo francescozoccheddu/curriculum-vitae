@@ -1,10 +1,15 @@
 import { StyleSheet, Text, View } from "@react-pdf/renderer";
-import { DISCLAIMER, PAGE_PADDING_H, SUBTLE } from "@/pdf/theme";
+import {
+  DISCLAIMER,
+  PAGE_PADDING_H,
+  PAGE_PADDING_V,
+  SUBTLE,
+} from "@/pdf/theme";
 
 const styles = StyleSheet.create({
   footer: {
     position: "absolute",
-    bottom: 12,
+    bottom: PAGE_PADDING_V,
     left: PAGE_PADDING_H,
     right: PAGE_PADDING_H,
     flexDirection: "row",

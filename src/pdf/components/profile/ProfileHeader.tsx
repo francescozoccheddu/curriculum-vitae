@@ -6,18 +6,18 @@ import type { Profile } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
   header: {
-    marginBottom: 12,
+    marginBottom: 28,
   },
   profileMain: {
     flexDirection: "row",
-    alignItems: "flex-start",
+    alignItems: "center",
   },
   photo: {
-    width: 62,
-    height: 62,
-    borderRadius: 31,
+    width: 84,
+    height: 84,
+    borderRadius: 42,
     objectFit: "cover",
-    marginRight: 14,
+    marginRight: 16,
   },
   info: {
     flex: 1,
