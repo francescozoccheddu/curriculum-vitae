@@ -1,5 +1,5 @@
-import ReactPDF from "@react-pdf/renderer";
 import { Content, DEFAULT_TAG_COLOR } from "@/pdf/Content";
+import { renderMeasuredPdf } from "@/pdf/measure";
 import { LOGO_HEIGHT, MONOCHROME_TAGS } from "@/pdf/theme";
 import { type Descriptor, loadDescriptorFile } from "@/utils/descriptor";
 import { fileExists, readTextFile } from "@/utils/file";
@@ -39,6 +39,8 @@ export async function renderPdf(
 ): Promise<void> {
   const rawDescriptor = await loadDescriptorFile(descriptorFile);
   const descriptor = await colorizeDescriptorLogos(rawDescriptor);
-  const content = <Content descriptor={descriptor} />;
-  await ReactPDF.render(content, outputFile);
+  await renderMeasuredPdf(
+    () => <Content descriptor={descriptor} />,
+    outputFile,
+  );
 }
