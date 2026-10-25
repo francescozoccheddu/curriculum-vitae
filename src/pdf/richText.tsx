@@ -9,8 +9,9 @@ export type RichTextNode =
 
 /** Characters that toggle a mark. Marks can be nested but must not overlap. */
 const MARKERS: Readonly<Record<string, RichTextMark>> = {
-  "§": "bold",
+  "§": "italic",
   _: "italic",
+  "*": "bold",
 };
 
 /** Makes the next character literal (e.g. `\_` or `\§`). */
@@ -35,8 +36,8 @@ function flush(frame: Frame): void {
 }
 
 /**
- * Parses a string where segments wrapped in `§` are bold and segments wrapped
- * in `_` are italic into a tree of nodes.
+ * Parses a string where segments wrapped in `§` or `_` are italic and segments
+ * wrapped in `*` are bold into a tree of nodes.
  * @throws If a mark is left open or marks overlap without nesting.
  */
 export function parseRichText(text: string): RichTextNode[] {

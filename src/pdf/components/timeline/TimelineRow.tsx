@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "@react-pdf/renderer";
 import { PointBody } from "@/pdf/components/common/PointBody";
 import type { Row } from "@/pdf/components/timeline/buildRows";
 import { Gutter } from "@/pdf/components/timeline/Gutter";
-import { CHILD_INDENT, MUTED, YEAR_WIDTH } from "@/pdf/theme";
+import { CHILD_INDENT, MUTED, ROW_GAP, YEAR_WIDTH } from "@/pdf/theme";
 import type { Descriptor } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
@@ -12,12 +12,15 @@ const styles = StyleSheet.create({
   year: {
     width: YEAR_WIDTH,
     textAlign: "right",
-    fontWeight: "medium",
+    fontSize: 7.2,
+    fontWeight: "bold",
     color: MUTED,
+    position: "relative",
+    top: 1,
   },
   rowContent: {
     flex: 1,
-    paddingBottom: 6,
+    paddingBottom: ROW_GAP,
   },
 });
 

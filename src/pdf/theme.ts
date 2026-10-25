@@ -35,11 +35,14 @@ export const PAGE_PADDING_V = 28;
 export const FONT_SIZE = 8.5;
 
 export const LINE = 0.6;
-export const DOT_0 = 5;
-export const DOT_1 = 3;
-export const YEAR_WIDTH = 24;
-export const GUTTER_WIDTH = 16;
-export const CHILD_INDENT = 10;
+export const DOT_0 = 4.4;
+export const DOT_1 = 2.8;
+export const YEAR_WIDTH = 20;
+export const GUTTER_WIDTH = 15;
+export const LANE_0 = 5.5;
+export const LANE_1 = 9.5;
+export const ROW_GAP = 6;
+export const CHILD_INDENT = 4;
 /** Vertical offset of the dot center from the top of a row (title midline). */
 export const CENTER = 5.8;
 

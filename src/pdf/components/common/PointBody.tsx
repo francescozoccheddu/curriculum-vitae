@@ -13,8 +13,10 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
   },
   projectYear: {
-    fontWeight: "medium",
+    fontSize: 7.2,
+    fontWeight: "bold",
     color: MUTED,
+    marginRight: 4,
   },
   titleLink: {
     marginLeft: 3,
@@ -44,7 +46,7 @@ export function PointBody(
     <>
       <View style={styles.titleRow}>
         {showYear && point.year ? (
-          <Text style={styles.projectYear}>{`${point.year}  `}</Text>
+          <Text style={styles.projectYear}>{point.year}</Text>
         ) : null}
         <Text style={sharedStyles.title}>{richText(point.title)}</Text>
         {point.grade ? <GradeChip grade={point.grade} /> : null}
