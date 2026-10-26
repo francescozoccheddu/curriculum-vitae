@@ -18,14 +18,13 @@ Font.register({
   ],
 });
 
-export const ACCENT = "#18181b";
-export const LINE_COLOR = "#a1a1aa";
+export const STRONG = "#18181b";
 export const TEXT = "#3f3f46";
 export const MUTED = "#71717a";
 export const SUBTLE = "#a1a1aa";
-export const STRONG = "#18181b";
 export const SURFACE = "#f4f4f5";
-export const DEFAULT_TAG_COLOR = "#71717a";
+export const LINE_COLOR = SUBTLE;
+export const DEFAULT_TAG_COLOR = MUTED;
 /** When true, tags ignore the descriptor colors and use DEFAULT_TAG_COLOR. */
 export const MONOCHROME_TAGS = false;
 export const LOGO_HEIGHT = 6.5;

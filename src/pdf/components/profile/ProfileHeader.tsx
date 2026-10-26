@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   langCode: {
     fontSize: 6.5,
     fontWeight: "semibold",
-    color: STRONG,
+    color: MUTED,
   },
   langSep: {
     fontSize: 6,
