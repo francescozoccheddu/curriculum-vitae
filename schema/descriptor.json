@@ -292,6 +292,9 @@
               "url": {
                 "type": ["string", "null"]
               },
+              "ongoing": {
+                "type": ["boolean", "null"]
+              },
               "children": {
                 "readOnly": true,
                 "anyOf": [

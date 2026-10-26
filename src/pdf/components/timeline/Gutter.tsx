@@ -13,6 +13,12 @@ import {
 } from "@/pdf/theme";
 
 const DOT_LEAD_IN = DOT_0 / 2;
+// Segments extending above ongoing first row: progressively shorter dashes with round caps
+const ONGOING_DASHES = [
+  { length: 3.2, gap: 1.5 },
+  { length: 2.0, gap: 1.5 },
+  { length: 1.0, gap: 1.5 },
+] as const;
 const CURVE_HEIGHT = ROW_GAP + CENTER - DOT_LEAD_IN;
 
 const styles = StyleSheet.create({
@@ -36,8 +42,35 @@ export function Gutter(p: Readonly<{ row: Row }>) {
     !row.isFirst && row.prevDepth !== undefined && row.prevDepth !== row.depth;
   const dotSize = row.depth === 0 ? DOT_0 : DOT_1;
 
+  // Precompute absolute y positions of ongoing dashes (extending upwards from CENTER)
+  let currentBottom = CENTER;
+  const ongoingDashesPos = ONGOING_DASHES.map((d) => {
+    const top = currentBottom - d.gap - d.length;
+    currentBottom = top;
+    return { top, length: d.length };
+  });
+
   return (
     <View style={styles.gutter}>
+      {/* Extension above ongoing first row: progressively shorter dashes with round caps */}
+      {row.isFirst && row.ongoing
+        ? ongoingDashesPos.map((dash, i) => (
+            <View
+              // biome-ignore lint/suspicious/noArrayIndexKey: static 3-element list
+              key={i}
+              style={{
+                position: "absolute",
+                left: x - LINE / 2,
+                top: dash.top,
+                height: dash.length,
+                width: LINE,
+                borderRadius: LINE / 2,
+                backgroundColor: LINE_COLOR,
+              }}
+            />
+          ))
+        : null}
+
       {/* Top segment: from y = 0 (or end of previous curve) to CENTER */}
       {!row.isFirst ? (
         <View

@@ -93,6 +93,7 @@ const pointSchema = z
 const firstLevelPoint = pointSchema
   .unwrap()
   .extend({
+    ongoing: z.boolean().nullable().optional(),
     children: z.array(pointSchema).nullable().optional().readonly(),
   })
   .strict()

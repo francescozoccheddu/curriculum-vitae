@@ -9,15 +9,18 @@ export type Row = Readonly<{
   isFirst: boolean;
   isLast: boolean;
   year: number | null;
+  /** Whether the first row's line is extended upwards to signal it is still ongoing. */
+  ongoing: boolean;
 }>;
 
 export function buildRows(history: readonly FirstLevelPoint[]): Row[] {
-  const intermediate: Pick<Row, "key" | "point" | "depth">[] = [];
+  const intermediate: Pick<Row, "key" | "point" | "depth" | "ongoing">[] = [];
   history.forEach((parent, i) => {
     intermediate.push({
       key: `${i}`,
       point: parent,
       depth: 0,
+      ongoing: parent.ongoing ?? false,
     });
     const children = parent.children ?? [];
     children.forEach((child, j) => {
@@ -25,6 +28,7 @@ export function buildRows(history: readonly FirstLevelPoint[]): Row[] {
         key: `${i}.${j}`,
         point: child,
         depth: 1,
+        ongoing: false,
       });
     });
   });
