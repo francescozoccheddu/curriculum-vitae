@@ -27,7 +27,7 @@ export const STRONG = "#18181b";
 export const SURFACE = "#f4f4f5";
 export const DEFAULT_TAG_COLOR = "#71717a";
 /** When true, tags ignore the descriptor colors and use DEFAULT_TAG_COLOR. */
-export const MONOCHROME_TAGS = true;
+export const MONOCHROME_TAGS = false;
 export const LOGO_HEIGHT = 6.5;
 
 export const PAGE_PADDING_H = 30;
