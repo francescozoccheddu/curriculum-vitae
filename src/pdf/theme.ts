@@ -29,6 +29,9 @@ export const DEFAULT_TAG_COLOR = "#71717a";
 /** When true, tags ignore the descriptor colors and use DEFAULT_TAG_COLOR. */
 export const MONOCHROME_TAGS = false;
 export const LOGO_HEIGHT = 6.5;
+export const PDF_POINTS_PER_INCH = 72;
+export const PHOTO_SIZE = 84;
+export const PHOTO_DPI = 720;
 
 export const PAGE_PADDING_H = 30;
 export const PAGE_PADDING_V = 28;

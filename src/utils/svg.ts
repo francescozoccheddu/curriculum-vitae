@@ -1,8 +1,34 @@
+import { optimize } from "svgo";
+
 export interface ViewBox {
   minX: number;
   minY: number;
   width: number;
   height: number;
+}
+
+export function optimizeSvg(svg: string): string {
+  return optimize(svg, {
+    multipass: true,
+    floatPrecision: 2,
+    plugins: [
+      {
+        name: "preset-default",
+        params: {
+          overrides: {
+            mergePaths: false,
+            moveElemsAttrsToGroup: false,
+            removeUnknownsAndDefaults: {
+              defaultAttrs: false,
+              uselessOverrides: false,
+            },
+          },
+        },
+      },
+      "removeTitle",
+      "removeDesc",
+    ],
+  }).data;
 }
 
 export function getSvgViewBox(svg: string): ViewBox {
@@ -49,7 +75,7 @@ export function prepareSvgForPdf(
 ): string {
   const vb = getSvgViewBox(svg);
   const width = Math.round(height * (vb.width / vb.height) * 100) / 100;
-  return new HTMLRewriter()
+  const rewritten = new HTMLRewriter()
     .on("svg", {
       element(el) {
         el.setAttribute("width", String(width));
@@ -63,7 +89,15 @@ export function prepareSvgForPdf(
         }
       },
     })
+    .on("[stroke]", {
+      element(el) {
+        if (el.getAttribute("stroke")?.toLowerCase() !== "none") {
+          el.setAttribute("stroke", color);
+        }
+      },
+    })
     .transform(svg);
+  return optimizeSvg(rewritten);
 }
 
 export function colorizeSvg(svg: string, color: string): string {
@@ -72,6 +106,13 @@ export function colorizeSvg(svg: string, color: string): string {
       element(el) {
         if (el.getAttribute("fill")?.toLowerCase() !== "none") {
           el.setAttribute("fill", color);
+        }
+      },
+    })
+    .on("[stroke]", {
+      element(el) {
+        if (el.getAttribute("stroke")?.toLowerCase() !== "none") {
+          el.setAttribute("stroke", color);
         }
       },
     })

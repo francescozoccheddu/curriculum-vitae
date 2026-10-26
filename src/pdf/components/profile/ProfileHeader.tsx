@@ -1,7 +1,14 @@
 import { Image, StyleSheet, Text, View } from "@react-pdf/renderer";
 import { Contacts } from "@/pdf/components/profile/Contacts";
 import { richText } from "@/pdf/richText";
-import { LINE_COLOR, MUTED, SEPARATOR, STRONG, SURFACE } from "@/pdf/theme";
+import {
+  LINE_COLOR,
+  MUTED,
+  PHOTO_SIZE,
+  SEPARATOR,
+  STRONG,
+  SURFACE,
+} from "@/pdf/theme";
 import type { Profile } from "@/utils/descriptor";
 
 const styles = StyleSheet.create({
@@ -13,9 +20,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   photo: {
-    width: 84,
-    height: 84,
-    borderRadius: 42,
+    width: PHOTO_SIZE,
+    height: PHOTO_SIZE,
+    borderRadius: PHOTO_SIZE / 2,
     objectFit: "cover",
     marginRight: 16,
   },
