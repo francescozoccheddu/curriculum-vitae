@@ -36,65 +36,66 @@ const languageLevelSchema = z
 
 const phoneSchema = z
   .strictObject({
-    prefix: phonePrefixSchema.nullable().optional(),
+    prefix: phonePrefixSchema.nullish(),
     number: phoneNumberWithoutPrefixSchema,
   })
   .readonly();
 
 const contactsSchema = z
   .strictObject({
-    phone: phoneSchema.nullable().optional(),
-    location: textSchema.nullable().optional(),
-    email: emailSchema.nullable().optional(),
-    github: usernameSchema.nullable().optional(),
-    linkedin: usernameSchema.nullable().optional(),
+    phone: phoneSchema.nullish(),
+    location: textSchema.nullish(),
+    email: emailSchema.nullish(),
+    github: usernameSchema.nullish(),
+    linkedin: usernameSchema.nullish(),
   })
   .readonly();
 
 const languageSchema = z
   .strictObject({
     language: languageCodeSchema,
-    level: languageLevelSchema.nullable().optional(),
+    level: languageLevelSchema.nullish(),
   })
   .readonly();
 
 const profileSchema = z
   .strictObject({
-    firstName: textSchema.nullable().optional(),
-    lastName: textSchema.nullable().optional(),
-    birthDate: dateSchema.nullable().optional(),
-    contacts: contactsSchema.nullable().optional(),
-    drivingLicense: z.boolean().nullable().optional(),
-    languages: z.array(languageSchema).nullable().optional().readonly(),
-    bio: textSchema.nullable().optional(),
-    picture: urlSchema.nullable().optional(),
+    firstName: textSchema.nullish(),
+    lastName: textSchema.nullish(),
+    birthDate: dateSchema.nullish(),
+    contacts: contactsSchema.nullish(),
+    drivingLicense: z.boolean().nullish(),
+    languages: z.array(languageSchema).nullish().readonly(),
+    bio: textSchema.nullish(),
+    picture: urlSchema.nullish(),
   })
   .readonly();
 
 const gradeSchema = z
   .strictObject({
     value: textSchema,
-    over: textSchema.nullable().optional(),
+    over: textSchema.nullish(),
   })
   .readonly();
 
 const pointSchema = z
   .strictObject({
     title: textSchema,
-    at: textSchema.nullable().optional(),
-    year: yearSchema.nullable().optional(),
-    description: textSchema.nullable().optional(),
-    tags: z.array(idSchema).nullable().optional().readonly(),
-    grade: gradeSchema.nullable().optional(),
-    url: urlSchema.nullable().optional(),
+    at: textSchema.nullish(),
+    year: yearSchema.nullish(),
+    toYear: yearSchema.or(z.literal("now")).nullish(),
+    description: textSchema.nullish(),
+    tags: z.array(idSchema).nullish().readonly(),
+    grade: gradeSchema.nullish(),
+    url: urlSchema.nullish(),
   })
   .readonly();
 
 const firstLevelPoint = pointSchema
   .unwrap()
   .extend({
-    ongoing: z.boolean().nullable().optional(),
-    children: z.array(pointSchema).nullable().optional().readonly(),
+    ongoing: z.boolean().nullish(),
+    children: z.array(pointSchema).nullish().readonly(),
   })
   .strict()
   .readonly();
@@ -103,15 +104,15 @@ const tagSchema = z
   .strictObject({
     id: idSchema,
     title: textSchema,
-    logo: urlSchema.nullable().optional(),
-    color: idSchema.nullable().optional(),
+    logo: urlSchema.nullish(),
+    color: idSchema.nullish(),
   })
   .readonly();
 
 const skillSchema = z
   .strictObject({
-    description: textSchema.nullable().optional(),
-    tags: z.array(idSchema).nullable().optional().readonly(),
+    description: textSchema.nullish(),
+    tags: z.array(idSchema).nullish().readonly(),
   })
   .readonly();
 
@@ -124,12 +125,12 @@ const colorSchema = z
 
 export const descriptorSchema = z
   .strictObject({
-    profile: profileSchema.nullable().optional(),
-    history: z.array(firstLevelPoint).nullable().optional().readonly(),
-    moreHistory: z.array(pointSchema).nullable().optional().readonly(),
-    skills: z.array(skillSchema).nullable().optional().readonly(),
-    tags: z.array(tagSchema).nullable().optional().readonly(),
-    colors: z.array(colorSchema).nullable().optional().readonly(),
+    profile: profileSchema.nullish(),
+    history: z.array(firstLevelPoint).nullish().readonly(),
+    moreHistory: z.array(pointSchema).nullish().readonly(),
+    skills: z.array(skillSchema).nullish().readonly(),
+    tags: z.array(tagSchema).nullish().readonly(),
+    colors: z.array(colorSchema).nullish().readonly(),
   })
   .readonly();
 

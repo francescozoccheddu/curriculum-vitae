@@ -2,6 +2,7 @@ import { Image, Link, StyleSheet, Text, View } from "@react-pdf/renderer";
 import linkIcon from "@/assets/icons/link.svg";
 import { Chips } from "@/pdf/components/common/Chips";
 import { GradeChip } from "@/pdf/components/common/GradeChip";
+import { formatYears } from "@/pdf/formatYears";
 import { richText } from "@/pdf/richText";
 import { SUBTLE, sharedStyles } from "@/pdf/theme";
 import type { Descriptor, Point } from "@/utils/descriptor";
@@ -46,7 +47,7 @@ export function PointBody(
     <>
       <View style={styles.titleRow}>
         {showYear && point.year ? (
-          <Text style={styles.projectYear}>{point.year}</Text>
+          <Text style={styles.projectYear}>{formatYears(point)}</Text>
         ) : null}
         <Text style={sharedStyles.title}>{richText(point.title)}</Text>
         {point.grade ? <GradeChip grade={point.grade} /> : null}

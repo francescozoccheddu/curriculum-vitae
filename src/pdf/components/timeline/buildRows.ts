@@ -1,3 +1,4 @@
+import { formatYears } from "@/pdf/formatYears";
 import type { FirstLevelPoint, Point } from "@/utils/descriptor";
 
 export type Row = Readonly<{
@@ -8,7 +9,7 @@ export type Row = Readonly<{
   nextDepth: 0 | 1 | undefined;
   isFirst: boolean;
   isLast: boolean;
-  year: number | null;
+  year: string | null;
   /** Whether the first row's line is extended upwards to signal it is still ongoing. */
   ongoing: boolean;
 }>;
@@ -20,7 +21,7 @@ export function buildRows(history: readonly FirstLevelPoint[]): Row[] {
       key: `${i}`,
       point: parent,
       depth: 0,
-      ongoing: parent.ongoing ?? false,
+      ongoing: parent.ongoing ?? parent.toYear === "now",
     });
     const children = parent.children ?? [];
     children.forEach((child, j) => {
@@ -33,7 +34,7 @@ export function buildRows(history: readonly FirstLevelPoint[]): Row[] {
     });
   });
   return intermediate.map((row, i) => {
-    const year = row.depth === 0 ? (row.point.year ?? null) : null;
+    const year = row.depth === 0 ? formatYears(row.point) : null;
     const prevRow = intermediate[i - 1];
     const nextRow = intermediate[i + 1];
     return {

@@ -233,6 +233,26 @@
                   }
                 ]
               },
+              "toYear": {
+                "anyOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "minimum": 1900,
+                        "maximum": 2100
+                      },
+                      {
+                        "type": "string",
+                        "const": "now"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
               "description": {
                 "anyOf": [
                   {
@@ -325,6 +345,26 @@
                               "type": "number",
                               "minimum": 1900,
                               "maximum": 2100
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "toYear": {
+                          "anyOf": [
+                            {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1900,
+                                  "maximum": 2100
+                                },
+                                {
+                                  "type": "string",
+                                  "const": "now"
+                                }
+                              ]
                             },
                             {
                               "type": "null"
@@ -440,6 +480,26 @@
                     "type": "number",
                     "minimum": 1900,
                     "maximum": 2100
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "toYear": {
+                "anyOf": [
+                  {
+                    "anyOf": [
+                      {
+                        "type": "number",
+                        "minimum": 1900,
+                        "maximum": 2100
+                      },
+                      {
+                        "type": "string",
+                        "const": "now"
+                      }
+                    ]
                   },
                   {
                     "type": "null"
