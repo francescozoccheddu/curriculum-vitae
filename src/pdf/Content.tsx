@@ -33,12 +33,21 @@ export type ContentProps = Readonly<{
 
 export function Content(p: ContentProps) {
   const { descriptor } = p;
+  const author = [descriptor.profile?.firstName, descriptor.profile?.lastName]
+    .filter(Boolean)
+    .join(" ");
   const rows = buildRows(descriptor.history ?? []);
   const skills = descriptor.skills ?? [];
   const moreHistory = descriptor.moreHistory ?? [];
 
   return (
-    <Document>
+    <Document
+      title={author ? `${author} - Curriculum Vitae` : "Curriculum Vitae"}
+      author={author}
+      subject={author ? `Curriculum Vitae of ${author}` : "Curriculum Vitae"}
+      keywords="CV, Curriculum Vitae, Resume"
+      language="en"
+    >
       <Page size="A4" style={styles.page}>
         <Footer />
         {descriptor.profile ? (
